@@ -139,21 +139,74 @@
   <!-- MAIN SCROLLYTELLING CONTAINER -->
   <main class="w-full">
 
-    <!-- 1. TRANG BÌA KÍCH THƯỚC TỈ LỆ 16:9 THEO BÁO SÀI GÒN GIẢI PHÓNG -->
-    <section id="cover-section" class="relative w-full min-h-[85vh] lg:min-h-[92vh] flex items-center justify-center overflow-hidden bg-navy-deep text-white">
+    <!-- 1. TRANG BÌA KÍCH THƯỚC TỈ LỆ 16:9 THEO BÁO SÀI GÒN GIẢI PHÓNG (FUTURISTIC CYBER-CITY EDITORIAL DESIGN) -->
+    <section id="cover-section" class="relative w-full min-h-[88vh] lg:min-h-[94vh] flex items-center justify-center overflow-hidden bg-[#070e1c] text-white">
       
-      <!-- Background Image with 16:9 container styling & cinematic editorial overlay -->
+      <!-- Background Image with 16:9 container styling & futuristic neon overlay -->
       <div class="absolute inset-0 z-0">
         <img 
-          src="/tphcm_skyline.jpg" 
-          alt="Toàn cảnh thành phố Hồ Chí Minh hiện đại bên bờ sông Sài Gòn" 
-          class="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000 ease-out hover:scale-100"
-          onerror="this.src='https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=2000&q=80'"
+          src="/cover_banner.jpg" 
+          alt="Toàn cảnh thành phố Hồ Chí Minh hiện đại với hiệu ứng ánh sáng tương lai" 
+          referrerpolicy="no-referrer"
+          class="w-full h-full object-cover object-right sm:object-center transform scale-105 transition-transform duration-1000 ease-out"
+          onerror="this.src='/tphcm_skyline.jpg'"
         />
-        <!-- Editorial Multi-layer Gradient Overlay: Navy Deep + Crimson Accents -->
-        <div class="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy/85 to-navy/70 mix-blend-multiply"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-navy-deep/95 via-navy-deep/75 to-transparent"></div>
+        <!-- Tech Gradient Overlay: Deep Navy on left for ultra-clean text legibility, transparent on right to showcase illuminated skyline -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#070e1c] via-[#070e1c]/85 sm:via-[#070e1c]/70 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#070e1c] via-transparent to-[#070e1c]/60"></div>
+        <!-- Ambient Cyber Radial Glows in Blue & Red -->
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/3 w-80 h-80 bg-rose-600/15 rounded-full blur-3xl pointer-events-none"></div>
       </div>
+
+      <!-- Vector 1: Matrix Dot Grid in Top Right (Inspired by screenshot) -->
+      <div class="hidden md:grid grid-cols-6 gap-2.5 absolute top-12 right-12 z-10 pointer-events-none opacity-40">
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span>
+      </div>
+
+      <!-- Vector 2: Flowing Dynamic Cyber Energy Wave Ribbon (Inspired by screenshot) -->
+      <svg class="absolute left-0 top-1/4 w-full max-w-3xl h-56 pointer-events-none z-10 opacity-70" viewBox="0 0 700 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M -50,130 Q 180,20 380,110 T 750,70" stroke="url(#cyberCyanGlow)" stroke-width="3.5" fill="none" filter="drop-shadow(0 0 10px #38bdf8)" />
+        <path d="M -50,150 Q 220,50 420,130 T 750,90" stroke="url(#cyberRedGlow)" stroke-width="2" fill="none" filter="drop-shadow(0 0 8px #f43f5e)" />
+        <defs>
+          <linearGradient id="cyberCyanGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#06b6d4" stop-opacity="0"/>
+            <stop offset="40%" stop-color="#38bdf8" stop-opacity="1"/>
+            <stop offset="80%" stop-color="#0284c7" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#0284c7" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="cyberRedGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#f43f5e" stop-opacity="0"/>
+            <stop offset="50%" stop-color="#e11d48" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#9f1239" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <!-- Vector 3: Horizontal Highway Light Streaks at Bottom (Inspired by screenshot) -->
+      <svg class="absolute bottom-0 left-0 right-0 w-full h-16 sm:h-24 pointer-events-none z-10" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="80" x2="1440" y2="80" stroke="#0ea5e9" stroke-width="2.5" stroke-opacity="0.75" />
+        <line x1="0" y1="72" x2="1440" y2="72" stroke="#38bdf8" stroke-width="3" stroke-opacity="0.95" filter="drop-shadow(0 0 8px #38bdf8)" />
+        <line x1="160" y1="62" x2="1440" y2="62" stroke="#f43f5e" stroke-width="2" stroke-opacity="0.8" filter="drop-shadow(0 0 6px #f43f5e)" />
+        <line x1="380" y1="52" x2="1440" y2="52" stroke="#06b6d4" stroke-width="1.5" stroke-opacity="0.6" />
+      </svg>
 
       <!-- Content Framing (16:9 ratio container on large displays) -->
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 w-full flex flex-col justify-center">
@@ -161,17 +214,36 @@
         <!-- Header Tags -->
         
 
+        <!-- Top Logo & Year Block (Matching Screenshot Top-Left Placement) -->
+        
+
         <!-- Main Title Exactly As Requested -->
-        <div class="max-w-4xl">
-          <div class="text-tech-accent text-sm sm:text-lg font-heading font-extrabold tracking-widest uppercase mb-3">
-            BƯỚC NGOẶT THỂ CHẾ ĐÔ THỊ VIỆT NAM
-          </div>
-          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight leading-[1.15] text-white uppercase drop-shadow-lg mb-6">
-            LUẬT PHÁT TRIỂN ĐÔ THỊ: <br class="hidden sm:inline" />
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-white to-tech-accent">
-              Kiến tạo thể chế mới – Khơi thông nguồn lực – Phát triển đô thị hiện đại
-            </span>
+        <div class="max-w-5xl">
+          <!-- Massive Headline (Replicating "CREATE FUTURE" Display Style) -->
+          <h1 class="text-3xl sm:text-5xl lg:text-7xl font-heading font-black tracking-tight leading-[1.1] text-white uppercase drop-shadow-2xl mb-3 sm:mb-4">
+            LUẬT PHÁT TRIỂN <br> ĐÔ THỊ
           </h1>
+
+          <!-- 3 Thẻ Div Riêng Biệt - Cỡ Chữ Nhỏ Gọn (Giảm 50%) -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 my-3 sm:my-4 max-w-3xl">
+            <!-- Div 1: KIẾN TẠO THỂ CHẾ MỚI -->
+            <div class="relative group overflow-hidden bg-gradient-to-r from-crimson via-[#e11d48] to-[#be123c] text-white font-heading font-bold text-xs sm:text-sm tracking-wider uppercase px-4 py-2 sm:py-2.5 rounded-xl shadow-lg border border-rose-400/40 flex items-center justify-center text-center backdrop-blur-md hover:scale-[1.02] transition-all duration-300">
+              <span class="drop-shadow-sm whitespace-nowrap">KIẾN TẠO THỂ CHẾ MỚI</span>
+            </div>
+            
+            <!-- Div 2: KHƠI THÔNG NGUỒN LỰC -->
+            <div class="relative group overflow-hidden bg-gradient-to-r from-[#e11d48] via-[#be123c] to-crimson-vibrant text-white font-heading font-bold text-xs sm:text-sm tracking-wider uppercase px-4 py-2 sm:py-2.5 rounded-xl shadow-lg border border-rose-400/40 flex items-center justify-center text-center backdrop-blur-md hover:scale-[1.02] transition-all duration-300">
+              <span class="drop-shadow-sm whitespace-nowrap">KHƠI THÔNG NGUỒN LỰC</span>
+            </div>
+            
+            <!-- Div 3: PHÁT TRIỂN ĐÔ THỊ HIỆN ĐẠI -->
+            <div class="relative group overflow-hidden bg-gradient-to-r from-[#be123c] via-crimson-vibrant to-crimson text-white font-heading font-bold text-xs sm:text-sm tracking-wider uppercase px-4 py-2 sm:py-2.5 rounded-xl shadow-lg border border-rose-400/40 flex items-center justify-center text-center backdrop-blur-md hover:scale-[1.02] transition-all duration-300">
+              <span class="drop-shadow-sm whitespace-nowrap">PHÁT TRIỂN ĐÔ THỊ HIỆN ĐẠI</span>
+            </div>
+          </div>
+
+          <!-- Framed High-Tech Badge (Matching Bottom-Left Frame in Screenshot) -->
+          
 
           
         </div>
