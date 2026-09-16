@@ -1,6 +1,6 @@
 {
   "name": "Luật Phát triển Đô thị",
-  "description": "Trang thông tin tương tác scrollytelling về Luật Phát triển Đô thị: Kiến tạo thể chế mới – Khơi thông nguồn lực – Phát triển đô thị hiện đại",
+  "description": "Luật Phát triển Đô thị: Kiến tạo thể chế mới – Khơi thông nguồn lực – Phát triển đô thị hiện đại",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
