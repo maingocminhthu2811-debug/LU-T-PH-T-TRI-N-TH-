@@ -1,0 +1,2483 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUẬT PHÁT TRIỂN ĐÔ THỊ: Kiến tạo thể chế mới – Khơi thông nguồn lực – Phát triển đô thị hiện đại</title>
+  <meta name="description" content="Trang chuyên đề tương tác scrollytelling về Luật Phát triển Đô thị - Khung thể chế đột phá cho đô thị hiện đại và TP. Hồ Chí Minh." />
+  <meta property="og:title" content="LUẬT PHÁT TRIỂN ĐÔ THỊ - Kiến tạo thể chế mới" />
+  <meta property="og:description" content="Chuyên đề đa phương tiện tương tác scrollytelling theo phong cách báo chí hiện đại Sài Gòn Giải Phóng." />
+  
+  <!-- Google Fonts: Be Vietnam Pro (standard Vietnamese font) + Montserrat & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind CSS CDN for guaranteed standalone execution in browser -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#0F1E36',
+              deep: '#0B1526',
+              light: '#1A365D',
+              surface: '#162A4A'
+            },
+            crimson: {
+              DEFAULT: '#881337',
+              deep: '#4C0519',
+              vibrant: '#9F1239',
+              badge: '#BE123C'
+            },
+            tech: {
+              DEFAULT: '#0284C7',
+              bright: '#0EA5E9',
+              light: '#E0F2FE',
+              accent: '#38BDF8'
+            },
+            neutral: {
+              canvas: '#F8FAFC',
+              card: '#FFFFFF',
+              border: '#E2E8F0',
+              muted: '#64748B'
+            }
+          },
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            heading: ['"Be Vietnam Pro"', 'Montserrat', 'sans-serif']
+          },
+          boxShadow: {
+            'elevation': '0 10px 30px -5px rgba(15, 30, 54, 0.08), 0 4px 10px -2px rgba(15, 30, 54, 0.04)',
+            'card-hover': '0 20px 35px -5px rgba(15, 30, 54, 0.12), 0 8px 16px -4px rgba(15, 30, 54, 0.06)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Global Typography Scale (+5 font sizes: Base increased from 16px to 21px) */
+    html {
+      font-size: 21px;
+    }
+    @media (max-width: 640px) {
+      html {
+        font-size: 19px;
+      }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #94A3B8;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #64748B;
+    }
+
+    /* 3D Flip Card Styles */
+    .flip-card {
+      perspective: 1200px;
+      height: 520px;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: left;
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 1rem;
+    }
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+
+    /* Pulse animation for live badges */
+    @keyframes subtlePulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.03); }
+    }
+    .pulse-subtle {
+      animation: subtlePulse 3s infinite ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="bg-neutral-canvas text-slate-800 font-sans antialiased selection:bg-crimson selection:text-white">
+
+  <!-- TOP READING PROGRESS BAR -->
+  <div id="reading-progress-container" class="fixed top-0 left-0 w-full h-1.5 z-50 bg-slate-200">
+    <div id="reading-progress-bar" class="h-full bg-gradient-to-r from-crimson to-tech w-0 transition-all duration-150"></div>
+  </div>
+
+  <!-- STICKY HEADER & SMART NAVIGATION -->
+  
+
+  <!-- MAIN SCROLLYTELLING CONTAINER -->
+  <main class="w-full">
+
+    <!-- 1. TRANG BÌA KÍCH THƯỚC TỈ LỆ 16:9 THEO BÁO SÀI GÒN GIẢI PHÓNG -->
+    <section id="cover-section" class="relative w-full min-h-[85vh] lg:min-h-[92vh] flex items-center justify-center overflow-hidden bg-navy-deep text-white">
+      
+      <!-- Background Image with 16:9 container styling & cinematic editorial overlay -->
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="/tphcm_skyline.jpg" 
+          alt="Toàn cảnh thành phố Hồ Chí Minh hiện đại bên bờ sông Sài Gòn" 
+          class="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000 ease-out hover:scale-100"
+          onerror="this.src='https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=2000&q=80'"
+        />
+        <!-- Editorial Multi-layer Gradient Overlay: Navy Deep + Crimson Accents -->
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy/85 to-navy/70 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-navy-deep/95 via-navy-deep/75 to-transparent"></div>
+      </div>
+
+      <!-- Content Framing (16:9 ratio container on large displays) -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 w-full flex flex-col justify-center">
+        
+        <!-- Header Tags -->
+        
+
+        <!-- Main Title Exactly As Requested -->
+        <div class="max-w-4xl">
+          <div class="text-tech-accent text-sm sm:text-lg font-heading font-extrabold tracking-widest uppercase mb-3">
+            BƯỚC NGOẶT THỂ CHẾ ĐÔ THỊ VIỆT NAM
+          </div>
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight leading-[1.15] text-white uppercase drop-shadow-lg mb-6">
+            LUẬT PHÁT TRIỂN ĐÔ THỊ: <br class="hidden sm:inline" />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-white to-tech-accent">
+              Kiến tạo thể chế mới – Khơi thông nguồn lực – Phát triển đô thị hiện đại
+            </span>
+          </h1>
+
+          
+        </div>
+
+        
+        
+
+      </div>
+    </section>
+
+
+    <!-- 2. PHẦN 1: THÔNG TIN NỔI BẬT -->
+    <section id="thong-tin-noi-bat" class="py-16 sm:py-24 bg-[#eef2f6] border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header (Centered) -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-2xl sm:text-4xl font-heading font-black text-navy tracking-tight uppercase">
+            THÔNG TIN NỔI BẬT
+          </h2>
+          <div class="w-16 h-1 bg-crimson rounded-full mx-auto mt-3"></div>
+        </div>
+
+        <!-- 4 Highlights Cards - Recreated precisely following the reference infographic style -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-6">
+          
+          <!-- Item 01: Teal / Mint Gradient Bubble with Pointer at Bottom -->
+          <div class="relative bg-gradient-to-br from-[#0d9488] via-[#059669] to-[#06b6d4] text-white p-7 rounded-[32px] border-4 border-white shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center justify-between text-center min-h-[260px]">
+            
+            <!-- Floating Circular Badge at Top (50% larger icon) -->
+            <div class="w-22 h-22 sm:w-24 sm:h-24 rounded-full bg-white shadow-xl p-2 flex items-center justify-center border-4 border-white/90 -mt-16 mb-4 group-hover:scale-105 transition-transform">
+              <div class="w-full h-full rounded-full bg-[#0d9488] flex items-center justify-center text-white shadow-inner">
+                <i data-lucide="award" class="w-11 h-11 sm:w-12 sm:h-12"></i>
+              </div>
+            </div>
+            
+            <!-- Main Content Text (Centered) -->
+            <h3 class="text-lg sm:text-xl font-heading font-extrabold text-white text-center leading-snug px-3 my-auto drop-shadow-sm">
+              Quốc hội <br> khóa XVI <br> thông qua ngày <br> 24-8-2026
+            </h3>
+
+            <!-- Speech Bubble Tail pointing down -->
+            <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[14px] border-t-[#06b6d4] drop-shadow-md"></div>
+          </div>
+
+          <!-- Item 02: Orange / Coral Gradient Bubble with Pointer at Top -->
+          <div class="relative bg-gradient-to-br from-[#f97316] via-[#ea580c] to-[#fb923c] text-white p-7 rounded-[32px] border-4 border-white shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center justify-between text-center min-h-[260px]">
+            
+            <!-- Speech Bubble Tail pointing up -->
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[14px] border-b-[#f97316] drop-shadow-md"></div>
+            
+            <!-- Main Content Text (Centered) -->
+            <h3 class="text-lg sm:text-xl font-heading font-extrabold text-white text-center leading-snug px-3 my-auto drop-shadow-sm">
+              Gồm <br> 5 Chương – <br> 66 Điều
+            </h3>
+
+            <!-- Floating Circular Badge at Bottom (50% larger icon) -->
+            <div class="w-22 h-22 sm:w-24 sm:h-24 rounded-full bg-white shadow-xl p-2 flex items-center justify-center border-4 border-white/90 -mb-16 mt-4 group-hover:scale-105 transition-transform">
+              <div class="w-full h-full rounded-full bg-[#ea580c] flex items-center justify-center text-white shadow-inner">
+                <i data-lucide="book-open" class="w-11 h-11 sm:w-12 sm:h-12"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 03: Purple / Indigo Gradient Bubble with Pointer at Bottom -->
+          <div class="relative bg-gradient-to-br from-[#6366f1] via-[#7c3aed] to-[#8b5cf6] text-white p-7 rounded-[32px] border-4 border-white shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center justify-between text-center min-h-[260px]">
+            
+            <!-- Floating Circular Badge at Top (50% larger icon) -->
+            <div class="w-22 h-22 sm:w-24 sm:h-24 rounded-full bg-white shadow-xl p-2 flex items-center justify-center border-4 border-white/90 -mt-16 mb-4 group-hover:scale-105 transition-transform">
+              <div class="w-full h-full rounded-full bg-[#6366f1] flex items-center justify-center text-white shadow-inner">
+                <i data-lucide="clock" class="w-11 h-11 sm:w-12 sm:h-12"></i>
+              </div>
+            </div>
+            
+            <!-- Main Content Text (Centered) -->
+            <h3 class="text-lg sm:text-xl font-heading font-extrabold text-white text-center leading-snug px-3 my-auto drop-shadow-sm">
+              Có hiệu lực từ <br> 1-10-2026
+            </h3>
+
+            <!-- Speech Bubble Tail pointing down -->
+            <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[14px] border-t-[#8b5cf6] drop-shadow-md"></div>
+          </div>
+
+          <!-- Item 04: Ocean Blue / Tech Blue Gradient Bubble with Pointer at Top -->
+          <div class="relative bg-gradient-to-br from-[#0284c7] via-[#0369a1] to-[#0ea5e9] text-white p-7 rounded-[32px] border-4 border-white shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center justify-between text-center min-h-[260px]">
+            
+            <!-- Speech Bubble Tail pointing up -->
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[14px] border-b-[#0284c7] drop-shadow-md"></div>
+            
+            <!-- Main Content Text (Centered) -->
+            <h3 class="text-lg sm:text-xl font-heading font-extrabold text-white text-center leading-snug px-3 my-auto drop-shadow-sm">
+              Chính sách ưu đãi thuế đặc thù <br>áp dụng từ năm 2027
+            </h3>
+
+            <!-- Floating Circular Badge at Bottom (50% larger icon) -->
+            <div class="w-22 h-22 sm:w-24 sm:h-24 rounded-full bg-white shadow-xl p-2 flex items-center justify-center border-4 border-white/90 -mb-16 mt-4 group-hover:scale-105 transition-transform">
+              <div class="w-full h-full rounded-full bg-[#0369a1] flex items-center justify-center text-white shadow-inner">
+                <i data-lucide="percent" class="w-11 h-11 sm:w-12 sm:h-12"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 3. PHẦN 2: MỤC TIÊU CHIẾN LƯỢC -->
+    <section id="muc-tieu" class="py-16 sm:py-20 bg-neutral-canvas border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          
+          <h2 class="text-2xl sm:text-4xl font-heading font-bold text-navy tracking-tight">
+            MỤC TIÊU
+          </h2>
+          
+        </div>
+
+        <!-- Big Visual Statement Banner -->
+        <div class="bg-gradient-to-br from-navy via-navy-light to-navy-surface text-white rounded-3xl p-8 sm:p-12 shadow-elevation border border-slate-700/50 mb-10">
+          <div class="max-w-4xl mx-auto text-center">
+            
+            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold leading-tight text-white mb-6">
+              Phân quyền mạnh hơn – <br> Gỡ bỏ điểm nghẽn Huy động tối đa nguồn lực – Tạo động lực phát triển mới.
+            </h3>
+            <div class="w-20 h-1 bg-crimson mx-auto rounded-full mb-6"></div>
+            
+          </div>
+        </div>
+
+        <!-- Transition Flow: Cơ chế thí điểm -> Khung thể chế ổn định, dài hạn -->
+        <div class="bg-white rounded-2xl p-6 sm:p-10 border border-slate-200 shadow-sm">
+          
+
+          <div class="flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-10">
+            <!-- Left: Cơ chế thí điểm -->
+            <div class="w-full md:w-5/12 bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center hover:border-slate-400 transition-all">
+              <div class="w-12 h-12 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center mx-auto mb-3">
+                <i data-lucide="building-2" class="w-6 h-6"></i>
+              </div>
+              
+              <h4 class="text-xl font-heading font-black text-slate-800 mt-1">
+                CƠ CHẾ THÍ ĐIỂM
+              </h4>
+              
+            </div>
+
+            <!-- Middle Arrow Flow -->
+            <div class="flex flex-col items-center justify-center text-crimson py-2">
+              <div class="w-12 h-12 rounded-full bg-crimson text-white flex items-center justify-center shadow-md">
+                <i data-lucide="arrow-right" class="w-6 h-6 hidden md:block"></i>
+                <i data-lucide="arrow-down" class="w-6 h-6 md:hidden"></i>
+              </div>
+              
+            </div>
+
+            <!-- Right: Khung thể chế ổn định, dài hạn -->
+            <div class="w-full md:w-5/12 bg-gradient-to-br from-navy/5 to-crimson/5 border-2 border-navy rounded-2xl p-6 text-center shadow-md">
+              <div class="w-12 h-12 rounded-full bg-navy text-white flex items-center justify-center mx-auto mb-3">
+                <i data-lucide="shield-check" class="w-6 h-6"></i>
+              </div>
+              
+              <h4 class="text-xl font-heading font-black text-navy mt-1">
+                KHUNG THỂ CHẾ ỔN ĐỊNH, DÀI HẠN
+              </h4>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 4. PHẦN 3: 7 NHÓM CHÍNH SÁCH ĐỘT PHÁ (INFOGRAPHIC SKYLINE NETWORK DESIGN) -->
+    <section id="7-chinh-sach" class="relative py-20 sm:py-28 overflow-hidden text-white border-b border-slate-900 bg-gradient-to-br from-blue-950 via-amber-600/90 to-red-900">
+      
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        
+
+        <!-- ==========================================
+             DESKTOP NETWORK INFOGRAPHIC LAYOUT (lg & above)
+             ========================================== -->
+        <div class="hidden lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+          
+          <!-- LEFT COLUMN: Policies 1, 2, 3 -->
+          <div class="lg:col-span-4 space-y-6">
+            
+            <!-- Policy 1: Tổ chức bộ máy và công vụ -->
+            <div class="relative group bg-slate-950/75 hover:bg-slate-900/85 backdrop-blur-md border border-white/20 hover:border-amber-400/80 rounded-2xl p-5 shadow-2xl transition-all duration-300 hover:-translate-x-1">
+              <!-- Right Connector Node toward Hub -->
+              <div class="absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border-2 border-white/70 bg-slate-900 flex items-center justify-center text-amber-400 shadow-lg z-20">
+                <i data-lucide="building-2" class="w-4 h-4"></i>
+              </div>
+              <div class="inline-block bg-slate-200 text-slate-950 font-heading font-black text-xs px-3 py-1 rounded-md uppercase tracking-wider mb-3 shadow">
+                TỔ CHỨC BỘ MÁY VÀ CÔNG VỤ
+              </div>
+              <ul class="space-y-2 text-xs sm:text-sm text-slate-200">
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Tăng quyền tự chủ cho thành phố</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Chủ động về biên chế, nhân sự và chính sách thu nhập</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Cho phép thí điểm các cơ chế, chính sách mới</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Policy 2: Quy hoạch và phát triển đô thị -->
+            <div class="relative group bg-slate-950/75 hover:bg-slate-900/85 backdrop-blur-md border border-white/20 hover:border-amber-400/80 rounded-2xl p-5 shadow-2xl transition-all duration-300 hover:-translate-x-1">
+              <!-- Right Connector Node toward Hub -->
+              <div class="absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border-2 border-white/70 bg-slate-900 flex items-center justify-center text-amber-400 shadow-lg z-20">
+                <i data-lucide="map" class="w-4 h-4"></i>
+              </div>
+              <div class="inline-block bg-slate-200 text-slate-950 font-heading font-black text-xs px-3 py-1 rounded-md uppercase tracking-wider mb-3 shadow">
+                QUY HOẠCH VÀ PHÁT TRIỂN ĐÔ THỊ
+              </div>
+              <ul class="space-y-2 text-xs sm:text-sm text-slate-200">
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Lập một quy hoạch tổng thể đồng bộ</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Khai thác không gian 3 chiều: ngầm – thấp – cao</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Phát triển theo mô hình TOD & nhà ở xã hội</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Policy 3: Phát triển kinh tế -->
+            <div class="relative group bg-slate-950/75 hover:bg-slate-900/85 backdrop-blur-md border border-white/20 hover:border-amber-400/80 rounded-2xl p-5 shadow-2xl transition-all duration-300 hover:-translate-x-1">
+              <!-- Right Connector Node toward Hub -->
+              <div class="absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border-2 border-white/70 bg-slate-900 flex items-center justify-center text-amber-400 shadow-lg z-20">
+                <i data-lucide="trending-up" class="w-4 h-4"></i>
+              </div>
+              <div class="inline-block bg-slate-200 text-slate-950 font-heading font-black text-xs px-3 py-1 rounded-md uppercase tracking-wider mb-3 shadow">
+                PHÁT TRIỂN KINH TẾ
+              </div>
+              <ul class="space-y-2 text-xs sm:text-sm text-slate-200">
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Phát triển khu thương mại tự do</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Huy động vốn bằng trái phiếu đô thị, dự án</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Thúc đẩy dịch vụ tài chính thế hệ mới</span>
+                </li>
+              </ul>
+              <!-- Metric bar accent inspired by reference screenshot -->
+              
+            </div>
+
+          </div>
+
+          <!-- CENTER COLUMN: Grand Central Hub & Policy 7 (Regional Linkage) -->
+          <div class="lg:col-span-4 flex flex-col items-center justify-between space-y-8 relative">
+            
+            <!-- Floating Decorative Outline Nodes (Matching the screenshot's floating badges) -->
+            
+
+            <!-- Central Round Hub (Recreated from screenshot) -->
+            <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full border-2 border-white/50 ring-8 ring-white/10 flex items-center justify-center p-3 shadow-2xl bg-slate-950/60 backdrop-blur-md group hover:scale-105 transition-transform duration-500">
+              
+              <!-- Subtle decorative orbit rings -->
+              <div class="absolute inset-2 rounded-full border border-dashed border-amber-400/60 animate-[spin_40s_linear_infinite]"></div>
+              
+              <!-- Inner circle with golden/amber ring -->
+              <div class="w-full h-full rounded-full border-2 border-amber-400/90 bg-gradient-to-b from-slate-900/95 via-navy/90 to-slate-950/95 flex flex-col items-center justify-center text-center p-6 shadow-inner">
+                
+                <h3 class="text-2xl font-heading font-black text-white leading-tight">
+                  7 NHÓM<br/>
+                  <span class="text-amber-400">CHÍNH SÁCH</span>
+                  <span class="text-amber-400">ĐỘT PHÁ</span>
+                </h3>
+                <div class="w-10 h-0.5 bg-white/40 my-2"></div>
+                
+              </div>
+
+              <!-- Connecting orbital nodes mimicking the screenshot -->
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center text-[10px] font-black shadow-lg">
+                <i data-lucide="award" class="w-3.5 h-3.5"></i>
+              </div>
+              <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center text-[10px] font-black shadow-lg">
+                <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+              </div>
+            </div>
+
+            <!-- Policy 7: Liên kết và phát triển vùng (Bottom Center Anchor) -->
+            <div class="relative group w-full bg-slate-950/75 hover:bg-slate-900/85 backdrop-blur-md border border-white/20 hover:border-amber-400/80 rounded-2xl p-5 shadow-2xl transition-all duration-300 text-center">
+              <!-- Top Connector Node with Linkage Icon -->
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-2 border-white/70 bg-slate-900 flex items-center justify-center text-amber-400 shadow-lg z-20">
+                <i data-lucide="network" class="w-4 h-4"></i>
+              </div>
+              <div class="inline-block bg-slate-200 text-slate-950 font-heading font-black text-xs px-3 py-1 rounded-md uppercase tracking-wider mb-3 shadow">
+                LIÊN KẾT VÀ PHÁT TRIỂN VÙNG
+              </div>
+              <ul class="space-y-1.5 text-xs sm:text-sm text-slate-200 text-left">
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Tăng cường vai trò điều phối vùng</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Phát triển chuỗi đô thị liên kết vùng</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Bảo vệ môi trường & ứng phó biến đổi khí hậu</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN: Policies 4, 5, 6 -->
+          <div class="lg:col-span-4 space-y-6">
+            
+            <!-- Policy 4: Văn hóa – Giáo dục – Y tế -->
+            <div class="relative group bg-slate-950/75 hover:bg-slate-900/85 backdrop-blur-md border border-white/20 hover:border-amber-400/80 rounded-2xl p-5 shadow-2xl transition-all duration-300 hover:translate-x-1">
+              <!-- Left Connector Node toward Hub -->
+              <div class="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border-2 border-white/70 bg-slate-900 flex items-center justify-center text-amber-400 shadow-lg z-20">
+                <i data-lucide="heart-pulse" class="w-4 h-4"></i>
+              </div>
+              <div class="inline-block bg-slate-200 text-slate-950 font-heading font-black text-xs px-3 py-1 rounded-md uppercase tracking-wider mb-3 shadow">
+                VĂN HÓA – GIÁO DỤC – Y TẾ
+              </div>
+              <ul class="space-y-2 text-xs sm:text-sm text-slate-200">
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Khuyến khích kinh tế ban đêm đa dạng</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Mở rộng quyền chủ động về giáo dục, đào tạo</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Phát triển y tế kỹ thuật cao & an toàn thực phẩm</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Policy 5: Khoa học, công nghệ & Chuyển đổi số -->
+            <div class="relative group bg-slate-950/75 hover:bg-slate-900/85 backdrop-blur-md border border-white/20 hover:border-amber-400/80 rounded-2xl p-5 shadow-2xl transition-all duration-300 hover:translate-x-1">
+              <!-- Left Connector Node toward Hub -->
+              <div class="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border-2 border-white/70 bg-slate-900 flex items-center justify-center text-amber-400 shadow-lg z-20">
+                <i data-lucide="binary" class="w-4 h-4"></i>
+              </div>
+              <div class="inline-block bg-slate-200 text-slate-950 font-heading font-black text-xs px-3 py-1 rounded-md uppercase tracking-wider mb-3 shadow">
+                 KHOA HỌC, CÔNG NGHỆ VÀ SỐ HÓA
+              </div>
+              <ul class="space-y-2 text-xs sm:text-sm text-slate-200">
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Đô thị khoa học – công nghệ – đổi mới sáng tạo</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Thử nghiệm công nghệ mới theo Sandbox</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Khuyến khích AI, dữ liệu lớn & kinh tế số</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Policy 6: Nguồn lực phát triển -->
+            <div class="relative group bg-slate-950/75 hover:bg-slate-900/85 backdrop-blur-md border border-white/20 hover:border-amber-400/80 rounded-2xl p-5 shadow-2xl transition-all duration-300 hover:translate-x-1">
+              <!-- Left Connector Node toward Hub -->
+              <div class="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border-2 border-white/70 bg-slate-900 flex items-center justify-center text-amber-400 shadow-lg z-20">
+                <i data-lucide="coins" class="w-4 h-4"></i>
+              </div>
+              <div class="inline-block bg-slate-200 text-slate-950 font-heading font-black text-xs px-3 py-1 rounded-md uppercase tracking-wider mb-3 shadow">
+                NGUỒN LỰC PHÁT TRIỂN
+              </div>
+              <ul class="space-y-2 text-xs sm:text-sm text-slate-200">
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Tăng quyền chủ động tài chính, ngân sách</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Bố trí và khai thác nguồn lực đất đai</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold leading-none">•</span>
+                  <span>Tháo gỡ khó khăn, vướng mắc cho các dự án</span>
+                </li>
+              </ul>
+              <!-- Icon trio badges inspired by reference screenshot -->
+              
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ==========================================
+             MOBILE & TABLET INFOGRAPHIC LAYOUT (< lg)
+             ========================================== -->
+        <div class="lg:hidden space-y-6">
+          
+          <!-- Mobile Central Hub -->
+          <div class="relative max-w-xs mx-auto rounded-full border-2 border-white/50 ring-4 ring-white/10 p-2 shadow-2xl bg-slate-950/70 backdrop-blur-md text-center mb-8">
+            <div class="rounded-full border border-amber-400/80 bg-gradient-to-b from-slate-900 to-slate-950 p-6">
+              <div class="text-[10px] font-black tracking-widest text-amber-400 uppercase mb-1">
+                TRỌNG TÂM THỂ CHẾ
+              </div>
+              <h3 class="text-xl font-heading font-black text-white leading-tight">
+                7 NHÓM<br/>
+                <span class="text-amber-400">CHÍNH SÁCH</span>
+              </h3>
+              <p class="text-[10px] text-slate-300 uppercase tracking-wider mt-1">
+                LUẬT PHÁT TRIỂN ĐÔ THỊ
+              </p>
+            </div>
+          </div>
+
+          <!-- Vertical Timeline Network for Mobile -->
+          <div class="relative pl-6 sm:pl-8 space-y-6 before:absolute before:left-3 sm:before:left-4 before:top-4 before:bottom-4 before:w-0.5 before:bg-gradient-to-b before:from-amber-400 before:via-white/40 before:to-amber-400">
+            
+            <!-- Mobile Item 1 -->
+            <div class="relative bg-slate-950/80 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 shadow-xl">
+              <div class="absolute -left-7 sm:-left-8 top-5 w-6 h-6 rounded-full border-2 border-white bg-slate-900 text-amber-400 flex items-center justify-center text-xs shadow-md">
+                1
+              </div>
+              <div class="inline-block bg-slate-200 text-slate-950 font-heading font-black text-[11px] px-2.5 py-1 rounded uppercase tracking-wider mb-2">
+                TỔ CHỨC BỘ MÁY & CÔNG VỤ
+              </div>
+              <ul class="space-y-1.5 text-xs text-slate-200">
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Tăng quyền tự chủ cho thành phố</span>
+                </li>
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Chủ động về biên chế, nhân sự và chính sách thu nhập</span>
+                </li>
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Cho phép thí điểm các cơ chế, chính sách mới</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Mobile Item 2 -->
+            <div class="relative bg-slate-950/80 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 shadow-xl">
+              <div class="absolute -left-7 sm:-left-8 top-5 w-6 h-6 rounded-full border-2 border-white bg-slate-900 text-amber-400 flex items-center justify-center text-xs shadow-md">
+                2
+              </div>
+              <div class="inline-block bg-slate-200 text-slate-950 font-heading font-black text-[11px] px-2.5 py-1 rounded uppercase tracking-wider mb-2">
+                QUY HOẠCH & PHÁT TRIỂN ĐÔ THỊ
+              </div>
+              <ul class="space-y-1.5 text-xs text-slate-200">
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Lập một quy hoạch tổng thể đồng bộ</span>
+                </li>
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Khai thác không gian 3 chiều: ngầm – thấp – cao</span>
+                </li>
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Phát triển theo mô hình TOD & nhà ở xã hội</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Mobile Item 3 -->
+            <div class="relative bg-slate-950/80 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 shadow-xl">
+              <div class="absolute -left-7 sm:-left-8 top-5 w-6 h-6 rounded-full border-2 border-white bg-slate-900 text-amber-400 flex items-center justify-center text-xs shadow-md">
+                3
+              </div>
+              <div class="inline-block bg-slate-200 text-slate-950 font-heading font-black text-[11px] px-2.5 py-1 rounded uppercase tracking-wider mb-2">
+                PHÁT TRIỂN KINH TẾ
+              </div>
+              <ul class="space-y-1.5 text-xs text-slate-200">
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Phát triển khu thương mại tự do</span>
+                </li>
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Huy động vốn bằng trái phiếu đô thị, dự án</span>
+                </li>
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Thúc đẩy dịch vụ tài chính thế hệ mới</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Mobile Item 4 -->
+            <div class="relative bg-slate-950/80 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 shadow-xl">
+              <div class="absolute -left-7 sm:-left-8 top-5 w-6 h-6 rounded-full border-2 border-white bg-slate-900 text-amber-400 flex items-center justify-center text-xs shadow-md">
+                4
+              </div>
+              <div class="inline-block bg-slate-200 text-slate-950 font-heading font-black text-[11px] px-2.5 py-1 rounded uppercase tracking-wider mb-2">
+                VĂN HÓA – GIÁO DỤC – Y TẾ
+              </div>
+              <ul class="space-y-1.5 text-xs text-slate-200">
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Khuyến khích kinh tế ban đêm đa dạng</span>
+                </li>
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Mở rộng quyền chủ động về giáo dục, đào tạo</span>
+                </li>
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Phát triển y tế kỹ thuật cao & an toàn thực phẩm</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Mobile Item 5 -->
+            <div class="relative bg-slate-950/80 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 shadow-xl">
+              <div class="absolute -left-7 sm:-left-8 top-5 w-6 h-6 rounded-full border-2 border-white bg-slate-900 text-amber-400 flex items-center justify-center text-xs shadow-md">
+                5
+              </div>
+              <div class="inline-block bg-slate-200 text-slate-950 font-heading font-black text-[11px] px-2.5 py-1 rounded uppercase tracking-wider mb-2">
+                KHOA HỌC, CÔNG NGHỆ & SỐ HÓA
+              </div>
+              <ul class="space-y-1.5 text-xs text-slate-200">
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Đô thị khoa học – công nghệ – đổi mới sáng tạo</span>
+                </li>
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Thử nghiệm công nghệ mới theo Sandbox</span>
+                </li>
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Khuyến khích AI, dữ liệu lớn & kinh tế số</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Mobile Item 6 -->
+            <div class="relative bg-slate-950/80 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 shadow-xl">
+              <div class="absolute -left-7 sm:-left-8 top-5 w-6 h-6 rounded-full border-2 border-white bg-slate-900 text-amber-400 flex items-center justify-center text-xs shadow-md">
+                6
+              </div>
+              <div class="inline-block bg-slate-200 text-slate-950 font-heading font-black text-[11px] px-2.5 py-1 rounded uppercase tracking-wider mb-2">
+                NGUỒN LỰC PHÁT TRIỂN
+              </div>
+              <ul class="space-y-1.5 text-xs text-slate-200">
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Tăng quyền chủ động tài chính, ngân sách</span>
+                </li>
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Bố trí và khai thác nguồn lực đất đai</span>
+                </li>
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Tháo gỡ khó khăn, vướng mắc cho các dự án</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Mobile Item 7 -->
+            <div class="relative bg-slate-950/80 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 shadow-xl">
+              <div class="absolute -left-7 sm:-left-8 top-5 w-6 h-6 rounded-full border-2 border-white bg-slate-900 text-amber-400 flex items-center justify-center text-xs shadow-md">
+                <i data-lucide="network" class="w-3.5 h-3.5"></i>
+              </div>
+              <div class="inline-block bg-slate-200 text-slate-950 font-heading font-black text-[11px] px-2.5 py-1 rounded uppercase tracking-wider mb-2">
+                LIÊN KẾT VÀ PHÁT TRIỂN VÙNG
+              </div>
+              <ul class="space-y-1.5 text-xs text-slate-200">
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Tăng cường vai trò điều phối vùng</span>
+                </li>
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Phát triển chuỗi đô thị liên kết vùng</span>
+                </li>
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amber-400 font-bold">•</span>
+                  <span>Bảo vệ môi trường & ứng phó biến đổi khí hậu</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 5. PHẦN 4: NHỮNG ĐIỂM ĐÁNG CHÚ Ý -->
+    <section id="nhung-diem-chu-y" class="py-16 sm:py-20 bg-slate-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          
+          <h2 class="text-2xl sm:text-4xl font-heading font-bold tracking-tight text-white">
+            NHỮNG ĐIỂM ĐÁNG CHÚ Ý
+          </h2>
+          
+        </div>
+
+        <!-- 5 Key Highlights Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          
+          <!-- TOD -->
+          <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 hover:bg-slate-800 hover:border-tech transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-tech/20 text-tech-accent flex items-center justify-center mb-4">
+                <i data-lucide="train" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-heading font-black text-tech-accent mb-2">
+                TOD:
+              </h3>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Phát triển đô thị gắn với giao thông công cộng.
+              </p>
+            </div>
+            
+          </div>
+
+          <!-- SANDBOX -->
+          <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 hover:bg-slate-800 hover:border-amber-400 transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-4">
+                <i data-lucide="box" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-heading font-black text-amber-400 mb-2">
+                SANDBOX:
+              </h3>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Thử nghiệm có kiểm soát công nghệ và mô hình kinh doanh mới.
+              </p>
+            </div>
+            
+          </div>
+
+          <!-- KHÔNG GIAN ĐÔ THỊ MỚI -->
+          <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 hover:bg-slate-800 hover:border-sky-400 transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center mb-4">
+                <i data-lucide="layers-3" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-heading font-black text-sky-300 mb-2">
+                KHÔNG GIAN ĐÔ THỊ MỚI:
+              </h3>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Khai thác không gian ngầm, tầm thấp và tầm cao.
+              </p>
+            </div>
+            
+          </div>
+
+          <!-- LIÊN KẾT VÙNG -->
+          <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 hover:bg-slate-800 hover:border-emerald-400 transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
+                <i data-lucide="share-2" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-heading font-black text-emerald-400 mb-2">
+                LIÊN KẾT VÙNG:
+              </h3>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Tăng kết nối hạ tầng, kinh tế và nguồn lực giữa các địa phương.
+              </p>
+            </div>
+            
+          </div>
+
+          <!-- TRÁCH NHIỆM GIẢI TRÌNH -->
+          <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 hover:bg-slate-800 hover:border-rose-400 transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center mb-4">
+                <i data-lucide="scale" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-heading font-black text-rose-400 mb-2">
+                TRÁCH NHIỆM GIẢI TRÌNH:
+              </h3>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Phần quyền đi đối với giám sát, thanh tra và kiểm soát quyền lực.
+              </p>
+            </div>
+            
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 6. PHẦN 3D FLIP CARDS INTERACTIVE CAROUSEL: 6 ĐIỀU ĐỘT PHÁ CỦA LUẬT PHÁT TRIỂN ĐÔ THỊ -->
+    <section id="flip-cards-section" class="py-16 sm:py-24 bg-gradient-to-b from-crimson-deep via-crimson to-crimson-deep border-b border-red-950 text-white shadow-inner">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Title & Smart Filter / Controller Header -->
+        <div class="text-center max-w-3xl mx-auto mb-8">
+          
+          <h2 class="text-2xl sm:text-4xl lg:text-5xl font-heading font-black text-white tracking-tight drop-shadow-sm">
+            NHỮNG ĐIỂM ĐỘT PHÁ CỦA LUẬT PHÁT TRIỂN ĐÔ THỊ
+          </h2>
+          <p class="text-red-100/90 mt-3 text-base sm:text-lg">
+            Nhấn vào bất kỳ thẻ nào để lật xem chi tiết mặt sau 
+          </p>
+        </div>
+
+        <!-- Master Interactive Controls Toolbar (Dropdown + Master Flip Action) -->
+        <div class="bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-red-200/50 shadow-xl mb-10 flex flex-wrap items-center justify-between gap-4">
+          
+          <!-- Dropdown Jumper to specific card -->
+          <div class="flex items-center gap-3 w-full sm:w-auto">
+            <label for="card-select" class="text-xs sm:text-sm font-bold text-navy uppercase whitespace-nowrap flex items-center gap-1.5">
+              <i data-lucide="filter" class="w-4 h-4 text-crimson"></i> Chọn:
+            </label>
+            <div class="relative flex-1 sm:w-80">
+              <select id="card-select" class="w-full bg-slate-50 border border-slate-300 text-navy font-semibold text-xs sm:text-sm rounded-xl px-3.5 py-2.5 pr-9 focus:ring-2 focus:ring-crimson focus:outline-none cursor-pointer appearance-none">
+                <option value="0">Phạm vi điều chỉnh & Nguyên tắc đột phá</option>
+                <option value="1">Phân quyền triệt để & Tự chủ bộ máy</option>
+                <option value="2">Mô hình quy hoạch & Phát triển đô thị kiểu mới</option>
+                <option value="3">Cơ chế kinh tế - tài chính & Nhà đầu tư chiến lược</option>
+                <option value="4">Quản lý đô thị, môi trường & Trật tự an toàn</option>
+                <option value="5">Quy định chi tiết về Khu kinh tế đặc biệt</option>
+              </select>
+              <i data-lucide="chevron-down" class="w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none"></i>
+            </div>
+          </div>
+
+          <!-- Carousel Controls & Master Flip Action -->
+          <div class="flex items-center gap-2.5 w-full sm:w-auto justify-end">
+            <button id="flip-all-btn" class="flex items-center justify-center gap-1.5 bg-crimson hover:bg-crimson-vibrant text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition-all shadow ml-1">
+              <i data-lucide="repeat" class="w-4 h-4"></i>
+              <span id="flip-all-text">Lật tất cả</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- 6 FLIP CARDS CONTAINER -->
+        <div id="cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- CARD 1: PHẠM VI ĐIỀU CHỈNH VÀ NGUYÊN TẮC ÁP DỤNG PHÁP LUẬT ĐỘT PHÁ -->
+          <div class="flip-card cursor-pointer group" data-card-index="0" onclick="toggleFlip(this)">
+            <div class="flip-card-inner shadow-2xl hover:shadow-card-hover rounded-2xl">
+              
+              <!-- Front Face -->
+              <div class="flip-card-front bg-white border-2 border-white/60 p-7 flex flex-col justify-between shadow-lg">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-semibold text-slate-500 flex items-center gap-1">
+                      <i data-lucide="mouse-pointer-click" class="w-3.5 h-3.5 text-crimson"></i> Bấm để lật
+                    </span>
+                  </div>
+                  <div class="w-20 h-20 rounded-2xl bg-navy/10 text-navy flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                    <i data-lucide="gavel" class="w-12 h-12"></i>
+                  </div>
+                  <h3 class="text-xl font-heading font-black text-navy leading-snug">
+                    PHẠM VI ĐIỀU CHỈNH VÀ NGUYÊN TẮC ÁP DỤNG PHÁP LUẬT ĐỘT PHÁ
+                  </h3>
+                  <div class="w-12 h-1 bg-crimson rounded-full my-4"></div>
+                </div>
+                <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-crimson">
+                  <span>Xem chi tiết 3 nội dung</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flip-card-back bg-navy text-white p-7 border-2 border-amber-400/40 rounded-2xl flex flex-col justify-between overflow-y-auto shadow-2xl">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs text-slate-300 flex items-center gap-1">
+                      <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Bấm để lật lại
+                    </span>
+                  </div>
+                  <h4 class="text-base font-heading font-bold text-amber-300 mb-4 pb-2 border-b border-white/20">
+                    PHẠM VI ĐIỀU CHỈNH VÀ NGUYÊN TẮC ÁP DỤNG PHÁP LUẬT ĐỘT PHÁ
+                  </h4>
+                  <div class="space-y-3.5 text-xs sm:text-sm text-slate-200 leading-relaxed">
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Quy định cơ chế, chính sách thúc đẩy phân lớn cho đô thị đặc biệt, các thành phố trực thuộc và khu kinh tế đặc biệt.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Nguyên tắc ưu tiên áp dụng Luật Phát triển đô thị khi có sự chồng chéo hoặc khác biệt với các luật khác.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Cơ chế bảo vệ cán bộ năng động, sáng tạo: Thông qua miễn trừ hoặc miễn trừ trách nhiệm pháp lý khi thực hiện nhiệm vụ vì lợi ích chung và không vụ lợi.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- CARD 2: PHÂN QUYỀN TRIỆT ĐỂ VÀ CƠ CHẾ TỰ CHỦ BỘ MÁY HÀNH CHÍNH -->
+          <div class="flip-card cursor-pointer group" data-card-index="1" onclick="toggleFlip(this)">
+            <div class="flip-card-inner shadow-2xl hover:shadow-card-hover rounded-2xl">
+              
+              <!-- Front Face -->
+              <div class="flip-card-front bg-white border-2 border-white/60 p-7 flex flex-col justify-between shadow-lg">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-semibold text-slate-500 flex items-center gap-1">
+                      <i data-lucide="mouse-pointer-click" class="w-3.5 h-3.5 text-crimson"></i> Bấm để lật
+                    </span>
+                  </div>
+                  <div class="w-20 h-20 rounded-2xl bg-crimson/10 text-crimson flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                    <i data-lucide="users" class="w-12 h-12"></i>
+                  </div>
+                  <h3 class="text-xl font-heading font-black text-navy leading-snug">
+                    PHÂN QUYỀN TRIỆT ĐỂ VÀ CƠ CHẾ TỰ CHỦ BỘ MÁY HÀNH CHÍNH
+                  </h3>
+                  <div class="w-12 h-1 bg-crimson rounded-full my-4"></div>
+                </div>
+                <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-crimson">
+                  <span>Xem chi tiết 4 nội dung</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flip-card-back bg-navy text-white p-7 border-2 border-amber-400/40 rounded-2xl flex flex-col justify-between overflow-y-auto shadow-2xl">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs text-slate-300 flex items-center gap-1">
+                      <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Bấm để lật lại
+                    </span>
+                  </div>
+                  <h4 class="text-base font-heading font-bold text-amber-300 mb-4 pb-2 border-b border-white/20">
+                    PHÂN QUYỀN TRIỆT ĐỂ VÀ CƠ CHẾ TỰ CHỦ BỘ MÁY HÀNH CHÍNH
+                  </h4>
+                  <div class="space-y-3.5 text-xs sm:text-sm text-slate-200 leading-relaxed">
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Phân quyền triệt để, toàn diện cho HĐND, UBND và Chủ tịch UBND thành phố.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Quyết định tổng số lượng biên chế không vượt quá 20% số biên chế công chức, viên chức Trung ương giao.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Cho phép ban hành văn bản quy phạm pháp luật đặc thù quy định khác với văn bản trung ương, và được thí điểm các cơ chế, chính sách mới chưa được pháp luật quy định.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Xã hội hóa có kiểm soát đối với các hoạt động chuyên môn, nghiệp vụ, hỗ trợ giải quyết thủ tục hành chính.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- CARD 3: MÔ HÌNH QUY HOẠCH VÀ PHÁT TRIỂN ĐÔ THỊ KIỂU MỚI -->
+          <div class="flip-card cursor-pointer group" data-card-index="2" onclick="toggleFlip(this)">
+            <div class="flip-card-inner shadow-2xl hover:shadow-card-hover rounded-2xl">
+              
+              <!-- Front Face -->
+              <div class="flip-card-front bg-white border-2 border-white/60 p-7 flex flex-col justify-between shadow-lg">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-semibold text-slate-500 flex items-center gap-1">
+                      <i data-lucide="mouse-pointer-click" class="w-3.5 h-3.5 text-crimson"></i> Bấm để lật
+                    </span>
+                  </div>
+                  <div class="w-20 h-20 rounded-2xl bg-tech/10 text-tech flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                    <i data-lucide="compass" class="w-12 h-12"></i>
+                  </div>
+                  <h3 class="text-xl font-heading font-black text-navy leading-snug">
+                    MÔ HÌNH QUY HOẠCH VÀ PHÁT TRIỂN ĐÔ THỊ KIỂU MỚI
+                  </h3>
+                  <div class="w-12 h-1 bg-crimson rounded-full my-4"></div>
+                </div>
+                <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-crimson">
+                  <span>Xem chi tiết 4 nội dung</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flip-card-back bg-navy text-white p-7 border-2 border-amber-400/40 rounded-2xl flex flex-col justify-between overflow-y-auto shadow-2xl">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs text-slate-300 flex items-center gap-1">
+                      <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Bấm để lật lại
+                    </span>
+                  </div>
+                  <h4 class="text-base font-heading font-bold text-amber-300 mb-4 pb-2 border-b border-white/20">
+                    MÔ HÌNH QUY HOẠCH VÀ PHÁT TRIỂN ĐÔ THỊ KIỂU MỚI
+                  </h4>
+                  <div class="space-y-3.5 text-xs sm:text-sm text-slate-200 leading-relaxed">
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Trục ngầm: Thành phố chỉ lập duy nhất một quy hoạch tổng thể thành phố tích hợp đầy đủ thay thế quy hoạch tỉnh và quy hoạch chung.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Quy hoạch và khai thác đồng bộ không gian ngầm, không gian trên thấp và khoảng không gian tầm cao.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Phát triển đô thị theo định hướng giao thông công cộng (TOD): Cho phép sử dụng ngân sách địa phương bồi thường và giải phóng mặt bằng độc lập, tạo quỹ đất đấu giá, chuyển nhượng chỉ tiêu quy hoạch.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Phát triển các khu đô thị lớn với thời hạn ưu đãi lên đến 70 năm cho nhà đầu tư chiến lược.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- CARD 4: CƠ CHẾ KINH TẾ - TÀI CHÍNH VÀ THU HÚT ĐẦU TƯ CHIẾN LƯỢC -->
+          <div class="flip-card cursor-pointer group" data-card-index="3" onclick="toggleFlip(this)">
+            <div class="flip-card-inner shadow-2xl hover:shadow-card-hover rounded-2xl">
+              
+              <!-- Front Face -->
+              <div class="flip-card-front bg-white border-2 border-white/60 p-7 flex flex-col justify-between shadow-lg">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-semibold text-slate-500 flex items-center gap-1">
+                      <i data-lucide="mouse-pointer-click" class="w-3.5 h-3.5 text-crimson"></i> Bấm để lật
+                    </span>
+                  </div>
+                  <div class="w-20 h-20 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                    <i data-lucide="banknote" class="w-12 h-12"></i>
+                  </div>
+                  <h3 class="text-xl font-heading font-black text-navy leading-snug">
+                    CƠ CHẾ KINH TẾ - TÀI CHÍNH VÀ THU HÚT ĐẦU TƯ CHIẾN LƯỢC
+                  </h3>
+                  <div class="w-12 h-1 bg-crimson rounded-full my-4"></div>
+                </div>
+                <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-crimson">
+                  <span>Xem chi tiết 4 nội dung</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flip-card-back bg-navy text-white p-7 border-2 border-amber-400/40 rounded-2xl flex flex-col justify-between overflow-y-auto shadow-2xl">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs text-slate-300 flex items-center gap-1">
+                      <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Bấm để lật lại
+                    </span>
+                  </div>
+                  <h4 class="text-base font-heading font-bold text-amber-300 mb-4 pb-2 border-b border-white/20">
+                    CƠ CHẾ KINH TẾ - TÀI CHÍNH VÀ THU HÚT ĐẦU TƯ CHIẾN LƯỢC
+                  </h4>
+                  <div class="space-y-3.5 text-xs sm:text-sm text-slate-200 leading-relaxed">
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Phát triển khu thương mại tự do và khu logistics tích hợp: Áp dụng chính sách thuế như khu phi thuế quan, cho phép niêm yết và thanh toán bằng ngoại tệ.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Thúc đẩy trung tâm tài chính quốc tế: thành lập cơ quan điều hành có thẩm quyền cấp phép ngân hàng đầu tư và sản phẩm tài chính quốc tế.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Thu hút nhà đầu tư chiến lược vào danh mục ưu tiên biến tần điều từ 2.000 tỷ đến 75.000 tỷ đồng tùy lĩnh vực và được ưu đãi đặc thù như thời hạn ưu đãi đến 70 năm, ưu tiên thủ tục mở rộng ranh giới.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Ưu đãi thuế: Miễn giảm thuế thuế thu nhập doanh nghiệp trong 5 năm đối với hoạt động khởi nghiệp sáng tạo và miễn thuế thu nhập cá nhân 5 năm cho các chuyên gia làm việc tại các tổ chức này.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- CARD 5: QUẢN LÝ ĐÔ THỊ, MÔI TRƯỜNG VÀ TRẬT TỰ AN TOÀN -->
+          <div class="flip-card cursor-pointer group" data-card-index="4" onclick="toggleFlip(this)">
+            <div class="flip-card-inner shadow-2xl hover:shadow-card-hover rounded-2xl">
+              
+              <!-- Front Face -->
+              <div class="flip-card-front bg-white border-2 border-white/60 p-7 flex flex-col justify-between shadow-lg">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-semibold text-slate-500 flex items-center gap-1">
+                      <i data-lucide="mouse-pointer-click" class="w-3.5 h-3.5 text-crimson"></i> Bấm để lật
+                    </span>
+                  </div>
+                  <div class="w-20 h-20 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                    <i data-lucide="leaf" class="w-12 h-12"></i>
+                  </div>
+                  <h3 class="text-xl font-heading font-black text-navy leading-snug">
+                    QUẢN LÝ ĐÔ THỊ, MÔI TRƯỜNG VÀ TRẬT TỰ AN TOÀN
+                  </h3>
+                  <div class="w-12 h-1 bg-crimson rounded-full my-4"></div>
+                </div>
+                <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-crimson">
+                  <span>Xem chi tiết 3 nội dung</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flip-card-back bg-navy text-white p-7 border-2 border-amber-400/40 rounded-2xl flex flex-col justify-between overflow-y-auto shadow-2xl">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs text-slate-300 flex items-center gap-1">
+                      <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Bấm để lật lại
+                    </span>
+                  </div>
+                  <h4 class="text-base font-heading font-bold text-amber-300 mb-4 pb-2 border-b border-white/20">
+                    QUẢN LÝ ĐÔ THỊ, MÔI TRƯỜNG VÀ TRẬT TỰ AN TOÀN
+                  </h4>
+                  <div class="space-y-3.5 text-xs sm:text-sm text-slate-200 leading-relaxed">
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Quy định lộ trình phát triển giao thông xanh, thiết lập vùng phát thải thấp (LEZ) và áp dụng phí giảm ùn tắc giao thông vào trung tâm.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Áp dụng tiêu chuẩn ngừng cung cấp dịch vụ nước đối với công trình xây dựng không phép, sai quy hoạch, sai thiết kế phòng cháy chữa cháy hoặc vi phạm nghiêm trọng về bảo vệ môi trường.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Cho phép áp dụng mức phạt vi phạm hành chính cao hơn nhưng không quá 2 lần mức phạt chung đối với một số lĩnh vực như đất đai, xây dựng, môi trường, phòng cháy chữa cháy, giao thông.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- CARD 6: QUY ĐỊNH CHI TIẾT VỀ KHU KINH TẾ ĐẶC BIỆT -->
+          <div class="flip-card cursor-pointer group" data-card-index="5" onclick="toggleFlip(this)">
+            <div class="flip-card-inner shadow-2xl hover:shadow-card-hover rounded-2xl">
+              
+              <!-- Front Face -->
+              <div class="flip-card-front bg-white border-2 border-white/60 p-7 flex flex-col justify-between shadow-lg">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-semibold text-slate-500 flex items-center gap-1">
+                      <i data-lucide="mouse-pointer-click" class="w-3.5 h-3.5 text-crimson"></i> Bấm để lật
+                    </span>
+                  </div>
+                  <div class="w-20 h-20 rounded-2xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                    <i data-lucide="anchor" class="w-12 h-12"></i>
+                  </div>
+                  <h3 class="text-xl font-heading font-black text-navy leading-snug">
+                    QUY ĐỊNH CHI TIẾT VỀ KHU KINH TẾ ĐẶC BIỆT
+                  </h3>
+                  <div class="w-12 h-1 bg-crimson rounded-full my-4"></div>
+                </div>
+                <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-crimson">
+                  <span>Xem chi tiết 3 nội dung</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flip-card-back bg-navy text-white p-7 border-2 border-amber-400/40 rounded-2xl flex flex-col justify-between overflow-y-auto shadow-2xl">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs text-slate-300 flex items-center gap-1">
+                      <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Bấm để lật lại
+                    </span>
+                  </div>
+                  <h4 class="text-base font-heading font-bold text-amber-300 mb-4 pb-2 border-b border-white/20">
+                    QUY ĐỊNH CHI TIẾT VỀ KHU KINH TẾ ĐẶC BIỆT
+                  </h4>
+                  <div class="space-y-3.5 text-xs sm:text-sm text-slate-200 leading-relaxed">
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Tiêu chí công nhận rõ ràng (vị trí chiến lược, có sân bay quốc tế hoặc cảng biển loại 1 trở lên, quy mô lớn).</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Bộ máy chính quyền tự chủ cao trong quản lý đầu tư, quy hoạch chung tích hợp và cấp phép xây dựng.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="text-tech-bright font-bold text-base leading-none">•</span>
+                      <span>Ưu đãi thuế quan, phát triển kinh tế biển và chính sách cho phép người nước ngoài mua thông tầng thuế vượt trội.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 7. INFOGRAPHIC 1: THÀNH PHỐ HỒ CHÍ MINH CÓ CƠ CHẾ CHÍNH SÁCH ĐẶC THÙ NÀO ? (ISOMETRIC 3D/4D CITY INFOGRAPHIC) -->
+    <section id="tphcm-dac-thu" class="py-16 sm:py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-4xl mx-auto mb-10 sm:mb-16">
+          
+          <h2 class="text-2xl sm:text-4xl lg:text-5xl font-heading font-black text-navy tracking-tight uppercase">
+            THÀNH PHỐ HỒ CHÍ MINH CÓ CƠ CHẾ CHÍNH SÁCH ĐẶC THÙ NÀO ?
+          </h2>
+          <div class="w-24 h-1 bg-crimson mx-auto rounded-full my-4"></div>
+          
+        </div>
+
+        <!-- ============================================================
+             DESKTOP VIEW: 3-COLUMN ISOMETRIC CITY INFOGRAPHIC (lg & above)
+             ============================================================ -->
+        <div class="hidden lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+          
+          <!-- LEFT COLUMN: Policy 01 & Policy 03 -->
+          <div class="lg:col-span-4 space-y-6">
+            
+            <!-- Card 01: Tổ chức bộ máy và tự chủ biên chế (Orange / Gold) -->
+            <div id="card-policy-01" class="group relative bg-white border-2 border-orange-200 hover:border-orange-500 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-x-1 cursor-pointer">
+              <!-- Slanted Pointer Notch towards City -->
+              <div class="hidden xl:block absolute -right-3 top-1/2 -translate-y-1/2 w-3 h-3 bg-white border-t-2 border-r-2 border-orange-300 group-hover:border-orange-500 rotate-45"></div>
+              
+              <div class="flex items-center justify-between mb-4">
+                <div class="inline-flex items-center gap-2.5">
+                  
+                  
+                </div>
+                <div class="w-9 h-9 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center">
+                  <i data-lucide="user-check" class="w-5 h-5"></i>
+                </div>
+              </div>
+
+              <h3 class="text-lg font-heading font-black text-navy group-hover:text-orange-600 transition-colors mb-2.5">
+                TỔ CHỨC BỘ MÁY VÀ TỰ CHỦ BIÊN CHẾ
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Tự chủ quyết định tổng số lượng biên chế tăng thêm không quá <strong class="text-navy font-bold">20%</strong> so với số biên chế Trung ương giao và chủ động quyết định số lượng đại biểu HĐND các cấp.
+              </p>
+              
+              
+            </div>
+
+            <!-- Card 03: Phân cấp quy hoạch không gian (Blue / Cyan) -->
+            <div id="card-policy-03" class="group relative bg-white border-2 border-sky-200 hover:border-sky-500 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-x-1 cursor-pointer">
+              <!-- Slanted Pointer Notch towards City -->
+              <div class="hidden xl:block absolute -right-3 top-1/2 -translate-y-1/2 w-3 h-3 bg-white border-t-2 border-r-2 border-sky-300 group-hover:border-sky-500 rotate-45"></div>
+
+              <div class="flex items-center justify-between mb-4">
+                <div class="inline-flex items-center gap-2.5">
+                  
+                  
+                </div>
+                <div class="w-9 h-9 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center">
+                  <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+              </div>
+
+              <h3 class="text-lg font-heading font-black text-navy group-hover:text-sky-600 transition-colors mb-2.5">
+                PHÂN CẤP QUY HOẠCH KHÔNG GIAN
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                HĐND Thành phố được phân cấp quyết định việc lập, thẩm định và phê duyệt không gian tích hợp 3 chiều: <strong class="text-navy font-bold">không gian ngầm</strong>, <strong class="text-navy font-bold">tầm thấp</strong> và <strong class="text-navy font-bold">tầm cao</strong>.
+              </p>
+
+              
+            </div>
+
+          </div>
+
+          <!-- CENTER COLUMN: ISOMETRIC 3D / 4D CITY VECTOR CANVAS -->
+          <div class="lg:col-span-4 relative flex flex-col items-center justify-center">
+            
+            <div class="relative w-full aspect-square max-w-[440px] flex items-center justify-center group">
+              
+              <!-- Subtle 4D Ambient Glow & Floating Podium Shadow -->
+              <div class="absolute inset-0 bg-gradient-to-tr from-sky-500/10 via-amber-500/5 to-rose-500/10 rounded-full blur-3xl -z-10 animate-pulse"></div>
+
+              <!-- Pure Scalable Vector Isometric 3D City Illustration -->
+              <svg viewBox="0 0 800 680" class="w-full h-auto drop-shadow-2xl transition-transform duration-500 group-hover:scale-105" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <!-- 3D Gradients -->
+                  <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#38bdf8"/>
+                    <stop offset="100%" stop-color="#0284c7"/>
+                  </linearGradient>
+                  <linearGradient id="skyDarkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#0284c7"/>
+                    <stop offset="100%" stop-color="#0369a1"/>
+                  </linearGradient>
+                  <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#fb923c"/>
+                    <stop offset="100%" stop-color="#ea580c"/>
+                  </linearGradient>
+                  <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#f43f5e"/>
+                    <stop offset="100%" stop-color="#be123c"/>
+                  </linearGradient>
+                  <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#34d399"/>
+                    <stop offset="100%" stop-color="#059669"/>
+                  </linearGradient>
+                  <linearGradient id="platformGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#f8fafc"/>
+                    <stop offset="100%" stop-color="#e2e8f0"/>
+                  </linearGradient>
+                  <!-- Filter for Soft Glow -->
+                  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="6" result="blur"/>
+                    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                  </filter>
+                </defs>
+
+                <!-- Ground Shadow Under Foundation Slab -->
+                <ellipse cx="400" cy="580" rx="350" ry="60" fill="rgba(15, 23, 42, 0.12)"/>
+
+                <!-- 3D ISOMETRIC PODIUM SLAB (Thickness & Top) -->
+                <!-- Left Face of Podium -->
+                <polygon points="70,360 400,550 400,580 70,390" fill="#cbd5e1"/>
+                <!-- Right Face of Podium -->
+                <polygon points="400,550 730,360 730,390 400,580" fill="#94a3b8"/>
+                <!-- Top Face of Podium -->
+                <polygon points="400,170 730,360 400,550 70,360" fill="url(#platformGrad)" stroke="#cbd5e1" stroke-width="2"/>
+
+                <!-- Isometric Road Network / Loop on Podium -->
+                <polygon points="400,205 690,360 400,515 110,360" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/>
+                <polygon points="400,230 650,360 400,480 150,360" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+                <!-- Dashed Lane Divider on Ring Road -->
+                <polyline points="400,217 670,360 400,497 130,360 400,217" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="8 6"/>
+
+                <!-- Green Ecological Park Patch (Bottom-Left) -->
+                <polygon points="180,400 270,350 330,385 240,435" fill="#86efac" stroke="#4ade80" stroke-width="2"/>
+                <!-- Park Trees (Isometric Cones) -->
+                <g>
+                  <circle cx="230" cy="385" r="9" fill="#15803d"/>
+                  <circle cx="228" cy="383" r="7" fill="#22c55e"/>
+                  <circle cx="270" cy="370" r="11" fill="#15803d"/>
+                  <circle cx="268" cy="368" r="9" fill="#22c55e"/>
+                  <circle cx="285" cy="395" r="8" fill="#15803d"/>
+                  <circle cx="283" cy="393" r="6" fill="#22c55e"/>
+                </g>
+
+                <!-- ==============================================
+                     BUILDING 1 (ORANGE / GOLD TOWER - POLICY 01)
+                     ============================================== -->
+                <g id="isometric-building-01" class="transition-all duration-300 hover:brightness-110 cursor-pointer">
+                  <!-- Ground Shadow -->
+                  <polygon points="210,340 340,350 350,320 220,310" fill="rgba(15, 23, 42, 0.2)"/>
+                  <!-- Left Face -->
+                  <polygon points="225,320 285,355 285,190 225,155" fill="url(#orangeGrad)"/>
+                  <!-- Right Face -->
+                  <polygon points="285,355 335,325 335,160 285,190" fill="#c2410c"/>
+                  <!-- Pitched Roof Left -->
+                  <polygon points="225,155 285,190 305,165 245,130" fill="#fed7aa"/>
+                  <!-- Pitched Roof Right -->
+                  <polygon points="285,190 335,160 305,165" fill="#fb923c"/>
+                  <!-- Windows Grid Left Face -->
+                  <g fill="#fef08a">
+                    <polygon points="240,180 252,187 252,197 240,190"/>
+                    <polygon points="260,192 272,199 272,209 260,202"/>
+                    <polygon points="240,210 252,217 252,227 240,220"/>
+                    <polygon points="260,222 272,229 272,239 260,232"/>
+                    <polygon points="240,240 252,247 252,257 240,250"/>
+                    <polygon points="260,252 272,259 272,269 260,262"/>
+                    <polygon points="240,270 252,277 252,287 240,280"/>
+                    <polygon points="260,282 272,289 272,299 260,292"/>
+                  </g>
+                  <!-- Windows Grid Right Face -->
+                  <g fill="#fef08a" opacity="0.9">
+                    <polygon points="295,200 307,193 307,203 295,210"/>
+                    <polygon points="315,188 327,181 327,191 315,198"/>
+                    <polygon points="295,230 307,223 307,233 295,240"/>
+                    <polygon points="315,218 327,211 327,221 315,228"/>
+                    <polygon points="295,260 307,253 307,263 295,270"/>
+                    <polygon points="315,248 327,241 327,251 315,258"/>
+                  </g>
+                  <!-- Badge Marker Pin 01 (Floating) -->
+                  <circle cx="265" cy="115" r="16" fill="#ea580c" stroke="#ffffff" stroke-width="3" filter="url(#glow)"/>
+                  <text x="265" y="120" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="12" fill="#ffffff">01</text>
+                </g>
+
+                <!-- ==============================================
+                     BUILDING 3 (CENTRAL TALL BLUE SKYSCRAPER - POLICY 03)
+                     ============================================== -->
+                <g id="isometric-building-03" class="transition-all duration-300 hover:brightness-110 cursor-pointer">
+                  <!-- Ground Shadow -->
+                  <polygon points="370,390 530,370 540,320 380,310" fill="rgba(15, 23, 42, 0.25)"/>
+                  <!-- Skyscraper Left Face -->
+                  <polygon points="385,360 455,400 455,130 385,90" fill="url(#skyGrad)"/>
+                  <!-- Skyscraper Right Face -->
+                  <polygon points="455,400 525,360 525,90 455,130" fill="url(#skyDarkGrad)"/>
+                  <!-- Roof Crown Left Face -->
+                  <polygon points="385,90 455,130 480,105 410,65" fill="#7dd3fc"/>
+                  <!-- Roof Crown Right Face -->
+                  <polygon points="455,130 525,90 480,105" fill="#0ea5e9"/>
+                  <!-- Rooftop Spire & Beacon -->
+                  <line x1="455" y1="85" x2="455" y2="35" stroke="#ffffff" stroke-width="3"/>
+                  <circle cx="455" cy="35" r="6" fill="#f43f5e" filter="url(#glow)"/>
+                  <circle cx="455" cy="35" r="2.5" fill="#ffffff"/>
+
+                  <!-- Window Columns on Supertower -->
+                  <g fill="#e0f2fe">
+                    <!-- Left face windows -->
+                    <polygon points="400,120 415,129 415,141 400,132"/>
+                    <polygon points="425,135 440,144 440,156 425,147"/>
+                    <polygon points="400,155 415,164 415,176 400,167"/>
+                    <polygon points="425,170 440,179 440,191 425,182"/>
+                    <polygon points="400,190 415,199 415,211 400,202"/>
+                    <polygon points="425,205 440,214 440,226 425,217"/>
+                    <polygon points="400,225 415,234 415,246 400,237"/>
+                    <polygon points="425,240 440,249 440,261 425,252"/>
+                    <polygon points="400,260 415,269 415,281 400,272"/>
+                    <polygon points="425,275 440,284 440,296 425,287"/>
+                    <polygon points="400,295 415,304 415,316 400,307"/>
+                    <polygon points="425,310 440,319 440,331 425,322"/>
+                    <!-- Right face windows -->
+                    <polygon points="470,144 485,135 485,147 470,156"/>
+                    <polygon points="495,129 510,120 510,132 495,141"/>
+                    <polygon points="470,179 485,170 485,182 470,191"/>
+                    <polygon points="495,164 510,155 510,167 495,176"/>
+                    <polygon points="470,214 485,205 485,217 470,226"/>
+                    <polygon points="495,199 510,190 510,202 495,211"/>
+                    <polygon points="470,249 485,240 485,252 470,261"/>
+                    <polygon points="495,234 510,225 510,237 495,246"/>
+                    <polygon points="470,284 485,275 485,287 470,296"/>
+                    <polygon points="495,269 510,260 510,272 495,281"/>
+                  </g>
+
+                  <!-- 3 Space Tiers Visual Accents (Ngầm - Thấp - Cao) -->
+                  <!-- High Space Ring -->
+                  <polygon points="380,110 455,153 530,110 455,67" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.7"/>
+                  
+                  <!-- Badge Marker Pin 03 (Floating) -->
+                  <circle cx="455" cy="15" r="16" fill="#0284c7" stroke="#ffffff" stroke-width="3" filter="url(#glow)"/>
+                  <text x="455" y="20" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="12" fill="#ffffff">03</text>
+                </g>
+
+                <!-- ==============================================
+                     BUILDING 4 (GREEN SUSTAINABLE TOD TOWER - POLICY 04)
+                     ============================================== -->
+                <g id="isometric-building-04" class="transition-all duration-300 hover:brightness-110 cursor-pointer">
+                  <!-- Ground Shadow -->
+                  <polygon points="490,410 610,400 620,370 500,380" fill="rgba(15, 23, 42, 0.2)"/>
+                  <!-- Left Face -->
+                  <polygon points="500,390 560,425 560,255 500,220" fill="url(#greenGrad)"/>
+                  <!-- Right Face -->
+                  <polygon points="560,425 610,395 610,225 560,255" fill="#047857"/>
+                  <!-- Gable Roof Left Face -->
+                  <polygon points="500,220 560,255 580,230 520,195" fill="#a7f3d0"/>
+                  <!-- Gable Roof Right Face -->
+                  <polygon points="560,255 610,225 580,230" fill="#34d399"/>
+
+                  <!-- Windows on Green Tower -->
+                  <g fill="#ecfdf5">
+                    <polygon points="515,245 527,252 527,262 515,255"/>
+                    <polygon points="535,257 547,264 547,274 535,267"/>
+                    <polygon points="515,275 527,282 527,292 515,285"/>
+                    <polygon points="535,287 547,294 547,304 535,297"/>
+                    <polygon points="515,305 527,312 527,322 515,315"/>
+                    <polygon points="535,317 547,324 547,334 535,327"/>
+                    <polygon points="515,335 527,342 527,352 515,345"/>
+                    <polygon points="535,347 547,354 547,364 535,357"/>
+                    <!-- Right face -->
+                    <polygon points="570,265 582,258 582,268 570,275"/>
+                    <polygon points="590,253 602,246 602,256 590,263"/>
+                    <polygon points="570,295 582,288 582,298 570,305"/>
+                    <polygon points="590,283 602,276 602,286 590,293"/>
+                    <polygon points="570,325 582,318 582,328 570,335"/>
+                    <polygon points="590,313 602,306 602,316 590,323"/>
+                  </g>
+
+                  <!-- Badge Marker Pin 04 (Floating) -->
+                  <circle cx="545" cy="175" r="16" fill="#059669" stroke="#ffffff" stroke-width="3" filter="url(#glow)"/>
+                  <text x="545" y="180" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="12" fill="#ffffff">04</text>
+                </g>
+
+                <!-- ==============================================
+                     BUILDING 2 (RED / CRIMSON INNOVATION HUB - POLICY 02)
+                     ============================================== -->
+                <g id="isometric-building-02" class="transition-all duration-300 hover:brightness-110 cursor-pointer">
+                  <!-- Ground Shadow -->
+                  <polygon points="310,480 440,460 450,430 320,450" fill="rgba(15, 23, 42, 0.25)"/>
+                  <!-- Left Face -->
+                  <polygon points="330,445 390,480 390,370 330,335" fill="url(#redGrad)"/>
+                  <!-- Right Face -->
+                  <polygon points="390,480 440,450 440,340 390,370" fill="#9f1239"/>
+                  <!-- Roof Left Face -->
+                  <polygon points="330,335 390,370 410,345 350,310" fill="#fecdd3"/>
+                  <!-- Roof Right Face -->
+                  <polygon points="390,370 440,340 410,345" fill="#f43f5e"/>
+
+                  <!-- Architectural Entrance Portal -->
+                  <polygon points="360,462 380,474 380,435 360,423" fill="#881337"/>
+                  <polygon points="380,474 385,471 385,432 380,435" fill="#4c0519"/>
+
+                  <!-- Windows on Red Innovation Hub -->
+                  <g fill="#ffe4e6">
+                    <polygon points="340,360 352,367 352,377 340,370"/>
+                    <polygon points="340,390 352,397 352,407 340,400"/>
+                    <polygon points="400,370 412,363 412,373 400,380"/>
+                    <polygon points="420,358 432,351 432,361 420,368"/>
+                    <polygon points="400,400 412,393 412,403 400,410"/>
+                    <polygon points="420,388 432,381 432,391 420,398"/>
+                  </g>
+
+                  <!-- Badge Marker Pin 02 (Floating) -->
+                  <circle cx="370" cy="285" r="16" fill="#be123c" stroke="#ffffff" stroke-width="3" filter="url(#glow)"/>
+                  <text x="370" y="290" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="12" fill="#ffffff">02</text>
+                </g>
+
+                <!-- Foreground Small Teal Building (Depth Layer) -->
+                <g id="isometric-building-cyan">
+                  <polygon points="255,445 295,468 295,405 255,382" fill="#06b6d4"/>
+                  <polygon points="295,468 325,450 325,387 295,405" fill="#0e7490"/>
+                  <polygon points="255,382 295,405 310,393 270,370" fill="#a5f3fc"/>
+                  <polygon points="295,405 325,387 310,393" fill="#22d3ee"/>
+                  <!-- Doorway & Window -->
+                  <polygon points="275,456 288,464 288,440 275,432" fill="#164e63"/>
+                  <polygon points="305,420 315,414 315,424 305,430" fill="#cffafe"/>
+                </g>
+
+                <!-- Decorative Connectors Dotted Lines (like in Screenshot 2) -->
+                <path d="M 265,115 L 200,90" fill="none" stroke="#ea580c" stroke-width="2" stroke-dasharray="4 4"/>
+                <path d="M 370,285 L 300,260" fill="none" stroke="#be123c" stroke-width="2" stroke-dasharray="4 4"/>
+                <path d="M 455,15 L 530,10" fill="none" stroke="#0284c7" stroke-width="2" stroke-dasharray="4 4"/>
+                <path d="M 545,175 L 610,190" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="4 4"/>
+              </svg>
+
+            </div>
+
+            
+
+          </div>
+
+          <!-- RIGHT COLUMN: Policy 02 & Policy 04 -->
+          <div class="lg:col-span-4 space-y-6">
+            
+            <!-- Card 02: Thí điểm cơ chế chính sách mới (Red / Rose) -->
+            <div id="card-policy-02" class="group relative bg-white border-2 border-rose-200 hover:border-rose-500 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:translate-x-1 cursor-pointer">
+              <!-- Slanted Pointer Notch towards City -->
+              <div class="hidden xl:block absolute -left-3 top-1/2 -translate-y-1/2 w-3 h-3 bg-white border-b-2 border-l-2 border-rose-300 group-hover:border-rose-500 rotate-45"></div>
+
+              <div class="flex items-center justify-between mb-4">
+                <div class="inline-flex items-center gap-2.5">
+                  
+                  
+                </div>
+                <div class="w-9 h-9 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center">
+                  <i data-lucide="lightbulb" class="w-5 h-5"></i>
+                </div>
+              </div>
+
+              <h3 class="text-lg font-heading font-black text-navy group-hover:text-rose-600 transition-colors mb-2.5">
+                THÍ ĐIỂM CƠ CHẾ CHÍNH SÁCH MỚI
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Quyết định thí điểm cơ chế, chính sách mới chưa được pháp luật quy định với thời hạn tối đa <strong class="text-navy font-bold">5 năm</strong> (ngoại trừ quốc phòng, an ninh, đối ngoại, tôn giáo).
+              </p>
+
+              
+            </div>
+
+            <!-- Card 04: Phát triển khu vực TOD và nhà ở xã hội (Emerald / Green) -->
+            <div id="card-policy-04" class="group relative bg-white border-2 border-emerald-200 hover:border-emerald-500 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:translate-x-1 cursor-pointer">
+              <!-- Slanted Pointer Notch towards City -->
+              <div class="hidden xl:block absolute -left-3 top-1/2 -translate-y-1/2 w-3 h-3 bg-white border-b-2 border-l-2 border-emerald-300 group-hover:border-emerald-500 rotate-45"></div>
+
+              <div class="flex items-center justify-between mb-4">
+                <div class="inline-flex items-center gap-2.5">
+                  
+                  
+                </div>
+                <div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                  <i data-lucide="home" class="w-5 h-5"></i>
+                </div>
+              </div>
+
+              <h3 class="text-lg font-heading font-black text-navy group-hover:text-emerald-600 transition-colors mb-2.5">
+                PHÁT TRIỂN KHU VỰC TOD & NHÀ Ở XÃ HỘI
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Thẩm quyền ban hành chính sách phát triển vùng đô thị tập trung quanh nhà ga Metro (<strong class="text-navy font-bold">TOD</strong>) và chỉ định chủ đầu tư nhà ở xã hội trên quỹ đất công.
+              </p>
+
+              
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ============================================================
+             MOBILE VIEW: RESPONSIVE ISOMETRIC CITY & TOUCH CARDS (< lg)
+             ============================================================ -->
+        <div class="lg:hidden space-y-6">
+          
+          <!-- Scalable 3D Isometric City Preview for Mobile -->
+          <div class="relative bg-white rounded-3xl p-4 border border-slate-200 shadow-xl overflow-hidden max-w-md mx-auto">
+            <div class="text-center mb-2">
+              <span class="inline-flex items-center gap-1.5 text-xs font-bold text-navy bg-slate-100 px-3 py-1 rounded-full uppercase tracking-wider">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500"></i> Mô hình 3D đô thị thể chế
+              </span>
+            </div>
+            
+            <svg viewBox="0 0 800 680" class="w-full h-auto drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
+              <use href="#skyGrad"/>
+              <ellipse cx="400" cy="580" rx="350" ry="60" fill="rgba(15, 23, 42, 0.12)"/>
+              <polygon points="70,360 400,550 400,580 70,390" fill="#cbd5e1"/>
+              <polygon points="400,550 730,360 730,390 400,580" fill="#94a3b8"/>
+              <polygon points="400,170 730,360 400,550 70,360" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+              <polygon points="400,205 690,360 400,515 110,360" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/>
+              <polygon points="400,230 650,360 400,480 150,360" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+              <polyline points="400,217 670,360 400,497 130,360 400,217" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="8 6"/>
+
+              <!-- Park -->
+              <polygon points="180,400 270,350 330,385 240,435" fill="#86efac"/>
+              <circle cx="230" cy="385" r="9" fill="#15803d"/>
+              <circle cx="270" cy="370" r="11" fill="#15803d"/>
+
+              <!-- Orange Building 01 -->
+              <polygon points="225,320 285,355 285,190 225,155" fill="#f97316"/>
+              <polygon points="285,355 335,325 335,160 285,190" fill="#c2410c"/>
+              <polygon points="225,155 285,190 305,165 245,130" fill="#fed7aa"/>
+              <polygon points="285,190 335,160 305,165" fill="#fb923c"/>
+              <circle cx="265" cy="115" r="18" fill="#ea580c" stroke="#ffffff" stroke-width="3"/>
+              <text x="265" y="121" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="13" fill="#ffffff">01</text>
+
+              <!-- Blue Building 03 -->
+              <polygon points="385,360 455,400 455,130 385,90" fill="#0284c7"/>
+              <polygon points="455,400 525,360 525,90 455,130" fill="#0369a1"/>
+              <polygon points="385,90 455,130 480,105 410,65" fill="#7dd3fc"/>
+              <polygon points="455,130 525,90 480,105" fill="#0ea5e9"/>
+              <line x1="455" y1="85" x2="455" y2="35" stroke="#ffffff" stroke-width="3"/>
+              <circle cx="455" cy="35" r="6" fill="#f43f5e"/>
+              <circle cx="455" cy="15" r="18" fill="#0284c7" stroke="#ffffff" stroke-width="3"/>
+              <text x="455" y="21" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="13" fill="#ffffff">03</text>
+
+              <!-- Green Building 04 -->
+              <polygon points="500,390 560,425 560,255 500,220" fill="#10b981"/>
+              <polygon points="560,425 610,395 610,225 560,255" fill="#047857"/>
+              <polygon points="500,220 560,255 580,230 520,195" fill="#a7f3d0"/>
+              <polygon points="560,255 610,225 580,230" fill="#34d399"/>
+              <circle cx="545" cy="175" r="18" fill="#059669" stroke="#ffffff" stroke-width="3"/>
+              <text x="545" y="181" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="13" fill="#ffffff">04</text>
+
+              <!-- Red Building 02 -->
+              <polygon points="330,445 390,480 390,370 330,335" fill="#f43f5e"/>
+              <polygon points="390,480 440,450 440,340 390,370" fill="#9f1239"/>
+              <polygon points="330,335 390,370 410,345 350,310" fill="#fecdd3"/>
+              <polygon points="390,370 440,340 410,345" fill="#f43f5e"/>
+              <circle cx="370" cy="285" r="18" fill="#be123c" stroke="#ffffff" stroke-width="3"/>
+              <text x="370" y="291" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="13" fill="#ffffff">02</text>
+            </svg>
+          </div>
+
+          <!-- 4 Stacked Mobile Cards with Color Coded Accents -->
+          <div class="space-y-4">
+            
+            <!-- Mobile Card 01 -->
+            <div class="bg-white border-2 border-orange-200 rounded-2xl p-5 shadow-md">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-xl bg-orange-500 text-white flex items-center justify-center font-heading font-black text-sm shadow">
+                  01
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold text-orange-600 uppercase tracking-wider">TÒA NHÀ HÀNH CHÍNH</span>
+                  <h4 class="text-base font-heading font-black text-navy leading-snug">
+                    TỔ CHỨC BỘ MÁY & TỰ CHỦ BIÊN CHẾ
+                  </h4>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Tự chủ quyết định tổng số lượng biên chế tăng thêm không quá <strong class="text-navy font-bold">20%</strong> so với Trung ương giao và chủ động số lượng đại biểu HĐND.
+              </p>
+            </div>
+
+            <!-- Mobile Card 02 -->
+            <div class="bg-white border-2 border-rose-200 rounded-2xl p-5 shadow-md">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-xl bg-rose-600 text-white flex items-center justify-center font-heading font-black text-sm shadow">
+                  02
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold text-rose-600 uppercase tracking-wider">KHÔNG GIAN ĐỔI MỚI</span>
+                  <h4 class="text-base font-heading font-black text-navy leading-snug">
+                    THÍ ĐIỂM CƠ CHẾ CHÍNH SÁCH MỚI
+                  </h4>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Được thí điểm các chính sách mới chưa có trong quy định pháp luật hiện hành với thời hạn lên tới <strong class="text-navy font-bold">5 năm</strong>.
+              </p>
+            </div>
+
+            <!-- Mobile Card 03 -->
+            <div class="bg-white border-2 border-sky-200 rounded-2xl p-5 shadow-md">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-xl bg-sky-600 text-white flex items-center justify-center font-heading font-black text-sm shadow">
+                  03
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold text-sky-600 uppercase tracking-wider">THÁP CAO & KHÔNG GIAN NGẦM</span>
+                  <h4 class="text-base font-heading font-black text-navy leading-snug">
+                    PHÂN CẤP QUY HOẠCH KHÔNG GIAN
+                  </h4>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Phân cấp toàn quyền phê duyệt quy hoạch đa tầng: <strong class="text-navy font-bold">không gian ngầm</strong>, <strong class="text-navy font-bold">tầm thấp</strong> và <strong class="text-navy font-bold">tầm cao</strong>.
+              </p>
+            </div>
+
+            <!-- Mobile Card 04 -->
+            <div class="bg-white border-2 border-emerald-200 rounded-2xl p-5 shadow-md">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-heading font-black text-sm shadow">
+                  04
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider">ĐÔ THỊ XANH METRO</span>
+                  <h4 class="text-base font-heading font-black text-navy leading-snug">
+                    PHÁT TRIỂN KHU VỰC TOD & NHÀ Ở XÃ HỘI
+                  </h4>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Chủ động quy hoạch khu đô thị nén <strong class="text-navy font-bold">TOD</strong> quanh các tuyến metro và quyết định chỉ định nhà đầu tư nhà ở xã hội trên quỹ đất công.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 8. INFOGRAPHIC 2: ĐỘT PHÁ VỀ KINH TẾ, KHOA HỌC VÀ NGUỒN LỰC -->
+    <section id="kinh-te-khoa-hoc" class="py-16 sm:py-24 bg-neutral-canvas border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-4xl mx-auto mb-14">
+          
+          <h2 class="text-2xl sm:text-4xl lg:text-5xl font-heading font-black text-navy tracking-tight uppercase">
+            ĐỘT PHÁ VỀ KINH TẾ, KHOA HỌC VÀ NGUỒN LỰC
+          </h2>
+          <div class="w-24 h-1 bg-tech mx-auto rounded-full my-4"></div>
+          
+        </div>
+
+        <!-- 4 Large Uniform Infographic Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          <!-- Block 1: THÀNH LẬP KHU THƯƠNG MẠI TỰ DO GẮN VỚI CẢNG BIỂN QUỐC TẾ -->
+          <div class="bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-navy transition-all hover:shadow-elevation flex flex-col sm:flex-row gap-6 items-start">
+            <div class="w-20 h-20 rounded-2xl bg-navy-light text-white flex-shrink-0 flex items-center justify-center shadow-md">
+              <i data-lucide="ship" class="w-10 h-10"></i>
+            </div>
+            <div>
+              
+              <h3 class="text-xl font-heading font-bold text-navy mt-1 mb-3">
+                THÀNH LẬP KHU THƯƠNG MẠI TỰ DO GẮN VỚI CẢNG BIỂN QUỐC TẾ
+              </h3>
+              <p class="text-base text-slate-700 leading-relaxed font-normal">
+                Được quyết định thành lập khu thương mại tự do gắn với cảng biển quốc tế, nơi nhà đầu tư nước ngoài được miễn thủ tục cấp giấy chứng nhận đăng ký đầu tư trước khi thành lập tổ chức kinh tế.
+              </p>
+            </div>
+          </div>
+
+          <!-- Block 2: HƯỞNG TOÀN BỘ CÁC KHOẢN THU KHÁC -->
+          <div class="bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-emerald-600 transition-all hover:shadow-elevation flex flex-col sm:flex-row gap-6 items-start">
+            <div class="w-20 h-20 rounded-2xl bg-emerald-700 text-white flex-shrink-0 flex items-center justify-center shadow-md">
+              <i data-lucide="wallet" class="w-10 h-10"></i>
+            </div>
+            <div>
+              
+              <h3 class="text-xl font-heading font-bold text-navy mt-1 mb-3">
+                HƯỞNG TOÀN BỘ CÁC KHOẢN THU KHÁC
+              </h3>
+              <p class="text-base text-slate-700 leading-relaxed font-normal">
+                Thành phố được hưởng toàn bộ các khoản thu khác theo quy định tại Luật mà chưa được quy định trong pháp luật về ngân sách nhà nước.
+              </p>
+            </div>
+          </div>
+
+          <!-- Block 3: THIẾT LẬP KHUNG PHÁP LÝ THỬ NGHIỆM CÓ KIỂM SOÁT (SANDBOX) -->
+          <div class="bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-tech transition-all hover:shadow-elevation flex flex-col sm:flex-row gap-6 items-start">
+            <div class="w-20 h-20 rounded-2xl bg-tech text-white flex-shrink-0 flex items-center justify-center shadow-md">
+              <i data-lucide="cpu" class="w-10 h-10"></i>
+            </div>
+            <div>
+              
+              <h3 class="text-xl font-heading font-bold text-navy mt-1 mb-3">
+                THIẾT LẬP KHUNG PHÁP LÝ THỬ NGHIỆM CÓ KIỂM SOÁT (SANDBOX)
+              </h3>
+              <p class="text-base text-slate-700 leading-relaxed font-normal">
+                Được phép thiết lập khung pháp lý thử nghiệm có kiểm soát (Sandbox) đối với các công nghệ mới, trí tuệ nhân tạo (AI), dữ liệu lớn và các mô hình kinh doanh số.
+              </p>
+            </div>
+          </div>
+
+          <!-- Block 4: SỬ DỤNG NGÂN SÁCH ĐỊA PHƯƠNG TRIỂN KHAI DỰ ÁN GPMB ĐỘC LẬP -->
+          <div class="bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-crimson transition-all hover:shadow-elevation flex flex-col sm:flex-row gap-6 items-start">
+            <div class="w-20 h-20 rounded-2xl bg-crimson text-white flex-shrink-0 flex items-center justify-center shadow-md">
+              <i data-lucide="shovel" class="w-10 h-10"></i>
+            </div>
+            <div>
+              
+              <h3 class="text-xl font-heading font-bold text-navy mt-1 mb-3">
+                SỬ DỤNG NGÂN SÁCH ĐỊA PHƯƠNG TRIỂN KHAI DỰ ÁN GPMB ĐỘC LẬP
+              </h3>
+              <p class="text-base text-slate-700 leading-relaxed font-normal">
+                Được phép sử dụng ngân sách địa phương triển khai dự án giải phóng mặt bằng độc lập trước khi phê duyệt chủ trương đầu tư dự án chính.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 9. INFOGRAPHIC 3: VĂN HÓA - XÃ HỘI VÀ CƠ CHẾ BẢO VỆ CÁN BỘ (3D CYLINDRICAL STAGE INFOGRAPHIC) -->
+    <section id="van-hoa-can-bo" class="py-16 sm:py-24 bg-gradient-to-b from-sky-100 via-sky-50 to-blue-50/70 border-b border-slate-200 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- =========================================================================
+             3D CYLINDRICAL STAGE & TIMELINE INFOGRAPHIC CANVAS
+             ========================================================================= -->
+        <div class="relative bg-white/80 backdrop-blur-md rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-2xl mb-12">
+          
+          <!-- Subtle 4D Background Radial Glow -->
+          <div class="absolute inset-x-1/4 top-10 h-72 bg-gradient-to-b from-sky-400/15 via-rose-400/10 to-transparent rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+          <!-- Pure SVG 3D Isometric Cylindrical Stage Canvas -->
+          <div class="relative w-full max-w-5xl mx-auto aspect-[10/5] flex items-center justify-center">
+            
+            <svg id="stage-podium-svg" viewBox="0 0 1000 460" class="w-full h-auto drop-shadow-xl select-none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- 3D Cylinder Lighting Gradients -->
+                <linearGradient id="cylinderWallGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#cbd5e1"/>
+                  <stop offset="25%" stop-color="#f8fafc"/>
+                  <stop offset="65%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#94a3b8"/>
+                </linearGradient>
+
+                <linearGradient id="centerPodiumWall" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#cbd5e1"/>
+                  <stop offset="20%" stop-color="#f1f5f9"/>
+                  <stop offset="80%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#94a3b8"/>
+                </linearGradient>
+
+                <linearGradient id="podiumTopGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#f1f5f9"/>
+                </linearGradient>
+
+                <!-- Colored Rings Gradients -->
+                <linearGradient id="ringRed" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fb7185"/>
+                  <stop offset="100%" stop-color="#e11d48"/>
+                </linearGradient>
+                <linearGradient id="ringTech" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#38bdf8"/>
+                  <stop offset="100%" stop-color="#0284c7"/>
+                </linearGradient>
+                <linearGradient id="ringCrimson" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f87171"/>
+                  <stop offset="100%" stop-color="#b91c1c"/>
+                </linearGradient>
+
+                <!-- Soft Drop Shadows & Glow -->
+                <filter id="shadow3d" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="8" result="blur"/>
+                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+                <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="4" result="blur"/>
+                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+              </defs>
+
+              <!-- ========================================================
+                   MAIN REAR PODIUM (STAGE CYLINDER)
+                   ======================================================== -->
+              <!-- Ground Shadow under Main Podium -->
+              <ellipse cx="500" cy="225" rx="380" ry="95" fill="rgba(15, 23, 42, 0.08)"/>
+
+              <!-- Main Podium Body (Cylinder Skirt) -->
+              <path d="M 120,160 A 380 110 0 0 0 880,160 L 880,200 A 380 110 0 0 1 120,200 Z" fill="url(#centerPodiumWall)"/>
+
+              <!-- Main Podium Top Surface -->
+              <ellipse cx="500" cy="160" rx="380" ry="110" fill="url(#podiumTopGrad)" stroke="#e2e8f0" stroke-width="2"/>
+
+              <!-- Multi-color Top Arc Perimeter (Divided into 3 distinct sections) -->
+              <!-- Red/Rose arc (leftmost) -->
+              <path d="M 140,152 A 365 100 0 0 1 365,70" fill="none" stroke="#e11d48" stroke-width="6.5" stroke-linecap="round"/>
+              <!-- Tech Blue arc (center) -->
+              <path d="M 380,67 A 365 100 0 0 1 620,67" fill="none" stroke="#0284c7" stroke-width="6.5" stroke-linecap="round"/>
+              <!-- Crimson arc (rightmost) -->
+              <path d="M 635,70 A 365 100 0 0 1 860,152" fill="none" stroke="#b91c1c" stroke-width="6.5" stroke-linecap="round"/>
+
+              <!-- Central Stage Title inside the ellipse surface -->
+              <g id="main-stage-header">
+                <text x="500" y="165" text-anchor="middle" dominant-baseline="middle" font-family="'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="27" fill="#0f172a">
+                  VĂN HÓA - XÃ HỘI VÀ CƠ CHẾ BẢO VỆ CÁN BỘ
+                </text>
+              </g>
+
+              <!-- ========================================================
+                   3 FOREGROUND 3D CYLINDRICAL PEDESTALS (Arc layout)
+                   ======================================================== -->
+
+              <!-- PEDESTAL 01: KINH TẾ BAN ĐÊM (RED / ROSE) -->
+              <g id="svg-podium-01" class="podium-group cursor-pointer transition-all duration-300">
+                <!-- Drop shadow -->
+                <ellipse cx="220" cy="385" rx="90" ry="22" fill="rgba(15, 23, 42, 0.16)"/>
+                <!-- Cylinder Skirt -->
+                <path d="M 135,325 A 85 36 0 0 0 305,325 L 305,375 A 85 36 0 0 1 135,375 Z" fill="url(#cylinderWallGrad)"/>
+                <!-- Top Surface -->
+                <ellipse cx="220" cy="325" rx="85" ry="36" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+                <!-- Glowing Ring -->
+                <ellipse cx="220" cy="325" rx="66" ry="27" fill="none" stroke="url(#ringRed)" stroke-width="5" filter="url(#neonGlow)"/>
+                <!-- Line Icon inside Ring (Moon/Star) -->
+                <path d="M 224,317 A 9 9 0 1 1 211,330 A 10 10 0 0 0 224,317 Z" fill="none" stroke="#e11d48" stroke-width="2.2"/>
+              </g>
+
+              <!-- PEDESTAL 02: GIÁO DỤC ĐẠI HỌC, CAO ĐẲNG (TECH BLUE - CENTER) -->
+              <g id="svg-podium-02" class="podium-group cursor-pointer transition-all duration-300">
+                <!-- Drop shadow -->
+                <ellipse cx="500" cy="425" rx="105" ry="26" fill="rgba(15, 23, 42, 0.2)"/>
+                <!-- Cylinder Skirt -->
+                <path d="M 400,360 A 100 42 0 0 0 600,360 L 600,415 A 100 42 0 0 1 400,415 Z" fill="url(#cylinderWallGrad)"/>
+                <!-- Top Surface -->
+                <ellipse cx="500" cy="360" rx="100" ry="42" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+                <!-- Glowing Ring -->
+                <ellipse cx="500" cy="360" rx="78" ry="32" fill="none" stroke="url(#ringTech)" stroke-width="6" filter="url(#neonGlow)"/>
+                <!-- Line Icon inside Ring (Graduation Cap) -->
+                <polygon points="500,348 518,357 500,366 482,357" fill="none" stroke="#0284c7" stroke-width="2.2"/>
+                <path d="M 488,360 L 488,369 A 12 6 0 0 0 512,369 L 512,360" fill="none" stroke="#0284c7" stroke-width="2"/>
+              </g>
+
+              <!-- PEDESTAL 03: BẢO VỆ CÁN BỘ (CRIMSON / SHIELD - RIGHT) -->
+              <g id="svg-podium-03" class="podium-group cursor-pointer transition-all duration-300">
+                <!-- Drop shadow -->
+                <ellipse cx="780" cy="385" rx="90" ry="22" fill="rgba(15, 23, 42, 0.16)"/>
+                <!-- Cylinder Skirt -->
+                <path d="M 695,325 A 85 36 0 0 0 865,325 L 865,375 A 85 36 0 0 1 695,375 Z" fill="url(#cylinderWallGrad)"/>
+                <!-- Top Surface -->
+                <ellipse cx="780" cy="325" rx="85" ry="36" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+                <!-- Glowing Ring -->
+                <ellipse cx="780" cy="325" rx="66" ry="27" fill="none" stroke="url(#ringCrimson)" stroke-width="5" filter="url(#neonGlow)"/>
+                <!-- Line Icon inside Ring (Shield) -->
+                <path d="M 780,312 L 794,318 C 794,330 787,337 780,341 C 773,337 766,330 766,318 Z" fill="none" stroke="#b91c1c" stroke-width="2.2"/>
+              </g>
+
+            </svg>
+
+          </div>
+
+          <!-- Interactive 3 Buttons Switcher Bar (Placed Below 3D Stage) -->
+          <div class="flex items-center justify-center gap-2 sm:gap-4 flex-wrap mt-8">
+            <button type="button" data-pillar="0" class="pillar-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all border flex items-center gap-2 bg-white border-slate-200 text-slate-700 hover:bg-slate-50 shadow-sm">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span> Kinh tế ban đêm
+            </button>
+            <button type="button" data-pillar="1" class="pillar-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all border flex items-center gap-2 bg-white border-slate-200 text-slate-700 hover:bg-slate-50 shadow-sm">
+              <span class="w-2.5 h-2.5 rounded-full bg-tech"></span> Trường ĐH, CĐ
+            </button>
+            <button type="button" data-pillar="2" class="pillar-tab-btn active px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all border flex items-center gap-2 bg-crimson/10 border-crimson/40 text-crimson shadow-sm">
+              <span class="w-2.5 h-2.5 rounded-full bg-crimson"></span> Bảo vệ cán bộ
+            </button>
+          </div>
+
+        </div>
+
+        <!-- =========================================================================
+             3 DETAILED PILLAR CARDS (Exact User-Specified Content)
+             ========================================================================= -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          
+          <!-- Card 01: KINH TẾ BAN ĐÊM -->
+          <div id="pillar-card-01" class="pillar-card group bg-white border-2 border-slate-200 hover:border-rose-500 rounded-2xl p-7 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 cursor-pointer flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-5">
+                
+                <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center">
+                  <i data-lucide="moon-star" class="w-5 h-5"></i>
+                </div>
+              </div>
+              <h3 class="text-lg sm:text-xl font-heading font-black text-navy group-hover:text-rose-600 transition-colors mb-4 uppercase leading-snug">
+                QUYỀN QUY ĐỊNH CƠ CHẾ ƯU ĐÃI ĐẶC THÙ CHO KINH TẾ BAN ĐÊM
+              </h3>
+              <ul class="space-y-3 text-sm text-slate-700">
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-rose-500 flex-shrink-0 mt-0.5"></i>
+                  <span>Ưu đãi thuế, phí, tiền thuê đất</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-rose-500 flex-shrink-0 mt-0.5"></i>
+                  <span>Giờ hoạt động linh hoạt</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-rose-500 flex-shrink-0 mt-0.5"></i>
+                  <span>Phát triển dịch vụ văn hóa, mua sắm, giải trí</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-rose-500 flex-shrink-0 mt-0.5"></i>
+                  <span>Đảm bảo an ninh, an toàn, văn minh</span>
+                </li>
+              </ul>
+            </div>
+            
+          </div>
+
+          <!-- Card 02: GIÁO DỤC ĐẠI HỌC, CAO ĐẲNG -->
+          <div id="pillar-card-02" class="pillar-card group bg-white border-2 border-slate-200 hover:border-tech transition-all rounded-2xl p-7 shadow-md hover:shadow-xl hover:-translate-y-1.5 cursor-pointer flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-5">
+                
+                <div class="w-10 h-10 rounded-xl bg-sky-50 text-tech flex items-center justify-center">
+                  <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                </div>
+              </div>
+              <h3 class="text-lg sm:text-xl font-heading font-black text-navy group-hover:text-tech transition-colors mb-4 uppercase leading-snug">
+                CẤP PHÉP HOẠT ĐỘNG ĐỐI VỚI TRƯỜNG ĐẠI HỌC, CAO ĐẲNG
+              </h3>
+              <div class="bg-sky-50/70 border border-sky-200/80 p-5 rounded-xl">
+                <p class="text-base font-semibold text-navy">
+                  Có vốn đầu tư hoặc liên kết nước ngoài
+                </p>
+              </div>
+            </div>
+            
+          </div>
+
+          <!-- Card 03: CƠ CHẾ BẢO VỆ CÁN BỘ -->
+          <div id="pillar-card-03" class="pillar-card group bg-white border-2 border-crimson hover:border-crimson-vibrant rounded-2xl p-7 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1.5 cursor-pointer flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-5">
+                
+                
+                <div class="w-10 h-10 rounded-xl bg-rose-50 text-crimson flex items-center justify-center">
+                  <i data-lucide="shield-alert" class="w-5 h-5"></i>
+                </div>
+              </div>
+              <h3 class="text-lg sm:text-xl font-heading font-black text-navy group-hover:text-crimson transition-colors mb-4 uppercase leading-snug">
+                QUY ĐỊNH CƠ CHẾ LOẠI TRỪ, MIỄN TRÁCH NHIỆM PHÁP LÝ
+              </h3>
+              <p class="text-sm text-slate-700 leading-relaxed font-normal mb-6">
+                Bảo vệ cán bộ, công chức, viên chức vì lợi ích chung trong quá trình thực hiện nhiệm vụ, hoạt động công vụ do cơ quan có thẩm quyền, người có thẩm quyền giao mà gây ra thiệt hại nhưng được cơ quan có thẩm quyền kết luận không phải do vụ lợi và vì sự phát triển chung của Thành phố.
+              </p>
+            </div>
+            <div>
+              <div class="bg-crimson/10 border border-crimson/30 p-4 rounded-xl text-center">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-crimson block">
+                  BẢO VỆ CÁN BỘ, CÔNG CHỨC DÁM NGHĨ, DÁM LÀM VÌ LỢI ÍCH CHUNG
+                </span>
+              </div>
+              
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-deep text-white border-t border-slate-800 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      
+
+        <div class="flex items-center gap-3">
+          <a href="#cover-section" class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold px-4 py-2.5 rounded-lg transition-colors">
+            <i data-lucide="arrow-up" class="w-4 h-4"></i> Về đầu trang
+          </a>
+        </div>
+      </div>
+
+      
+
+    </div>
+  </footer>
+
+
+  <!-- JAVASCRIPT: SCROLLYTELLING, READING PROGRESS, 3D FLIP CARDS & DROPDOWN CONTROLLER -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // 1. Reading Progress Bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const progressBar = document.getElementById('reading-progress-bar');
+      if (progressBar) {
+        progressBar.style.width = scrolled + '%';
+      }
+    });
+
+    // 2. Flip Card Interactive Function
+    function toggleFlip(cardElement) {
+      if (cardElement) {
+        cardElement.classList.toggle('flipped');
+      }
+    }
+
+    // 3. Quick Navigation Select Box Controller
+    const quickNavSelect = document.getElementById('quick-nav-select');
+    if (quickNavSelect) {
+      quickNavSelect.addEventListener('change', (e) => {
+        const targetId = e.target.value;
+        if (targetId && targetId.startsWith('#')) {
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    }
+
+    // 4. Flip Cards Carousel / Jumper Controller
+    const allFlipCards = document.querySelectorAll('#cards-grid .flip-card');
+    const cardSelect = document.getElementById('card-select');
+    const prevBtn = document.getElementById('card-prev-btn');
+    const nextBtn = document.getElementById('card-next-btn');
+    const cardIndicator = document.getElementById('card-indicator');
+    const flipAllBtn = document.getElementById('flip-all-btn');
+    const headerFlipAllBtn = document.getElementById('header-flip-all-btn');
+    const flipAllText = document.getElementById('flip-all-text');
+
+    let currentCardIndex = 0;
+    let allFlippedState = false;
+
+    function updateCardView(index) {
+      currentCardIndex = Math.max(0, Math.min(index, allFlipCards.length - 1));
+      
+      // Update dropdown selection
+      if (cardSelect) {
+        cardSelect.value = currentCardIndex.toString();
+      }
+
+      // Update indicator
+      if (cardIndicator) {
+        cardIndicator.textContent = `${currentCardIndex + 1} / ${allFlipCards.length}`;
+      }
+
+      // Smoothly scroll to the target card
+      const targetCard = allFlipCards[currentCardIndex];
+      if (targetCard) {
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        // subtle highlight animation
+        targetCard.classList.add('ring-4', 'ring-tech/50');
+        setTimeout(() => {
+          targetCard.classList.remove('ring-4', 'ring-tech/50');
+        }, 1200);
+      }
+    }
+
+    // Dropdown change event
+    if (cardSelect) {
+      cardSelect.addEventListener('change', (e) => {
+        updateCardView(parseInt(e.target.value, 10));
+      });
+    }
+
+    // Prev / Next button events
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        const newIndex = (currentCardIndex - 1 + allFlipCards.length) % allFlipCards.length;
+        updateCardView(newIndex);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        const newIndex = (currentCardIndex + 1) % allFlipCards.length;
+        updateCardView(newIndex);
+      });
+    }
+
+    // Flip All Master Toggle
+    function toggleFlipAll() {
+      allFlippedState = !allFlippedState;
+      allFlipCards.forEach(card => {
+        if (allFlippedState) {
+          card.classList.add('flipped');
+        } else {
+          card.classList.remove('flipped');
+        }
+      });
+      if (flipAllText) {
+        flipAllText.textContent = allFlippedState ? 'Lật lại mặt trước' : 'Lật tất cả';
+      }
+    }
+
+    if (flipAllBtn) {
+      flipAllBtn.addEventListener('click', toggleFlipAll);
+    }
+    if (headerFlipAllBtn) {
+      headerFlipAllBtn.addEventListener('click', () => {
+        // Also scroll down to flip cards
+        const flipSection = document.getElementById('flip-cards-section');
+        if (flipSection) {
+          flipSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        toggleFlipAll();
+      });
+    }
+
+    // 4. Interactive 3D City Buildings & Policy Cards Linking
+    const policyMap = [
+      { cardId: 'card-policy-01', buildingId: 'isometric-building-01' },
+      { cardId: 'card-policy-02', buildingId: 'isometric-building-02' },
+      { cardId: 'card-policy-03', buildingId: 'isometric-building-03' },
+      { cardId: 'card-policy-04', buildingId: 'isometric-building-04' },
+    ];
+
+    policyMap.forEach(({ cardId, buildingId }) => {
+      const card = document.getElementById(cardId);
+      const building = document.getElementById(buildingId);
+
+      if (card && building) {
+        // Hover Card -> Highlight Building
+        card.addEventListener('mouseenter', () => {
+          building.style.transform = 'translateY(-8px) scale(1.04)';
+          building.style.transformOrigin = 'center';
+          building.style.filter = 'drop-shadow(0 15px 25px rgba(0,0,0,0.35))';
+          card.classList.add('ring-2', 'ring-offset-2', 'ring-navy');
+        });
+        card.addEventListener('mouseleave', () => {
+          building.style.transform = '';
+          building.style.filter = '';
+          card.classList.remove('ring-2', 'ring-offset-2', 'ring-navy');
+        });
+
+        // Hover Building -> Highlight Card
+        building.addEventListener('mouseenter', () => {
+          building.style.transform = 'translateY(-8px) scale(1.04)';
+          building.style.transformOrigin = 'center';
+          building.style.filter = 'drop-shadow(0 15px 25px rgba(0,0,0,0.35))';
+          card.classList.add('ring-2', 'ring-offset-2', 'ring-navy', 'scale-105');
+        });
+        building.addEventListener('mouseleave', () => {
+          building.style.transform = '';
+          building.style.filter = '';
+          card.classList.remove('ring-2', 'ring-offset-2', 'ring-navy', 'scale-105');
+        });
+      }
+    });
+
+    // 5. Interactive 3D Cylindrical Stage Timeline Controller (#van-hoa-can-bo)
+    const stagePillars = [
+      {
+        id: '01',
+        name: 'Kinh tế ban đêm',
+        badge: 'Trụ cột 01: Dịch vụ kinh tế',
+        badgeColor: 'bg-rose-50 text-rose-800 border-rose-200',
+        title: 'QUYỀN QUY ĐỊNH CƠ CHẾ ƯU ĐÃI ĐẶC THÙ CHO KINH TẾ BAN ĐÊM',
+        desc: '• Ưu đãi thuế, phí, tiền thuê đất  • Giờ hoạt động linh hoạt  • Phát triển dịch vụ văn hóa, mua sắm, giải trí  • Đảm bảo an ninh, an toàn, văn minh',
+        podiumId: 'svg-podium-01',
+        cardId: 'pillar-card-01',
+        activeRing: 'ring-rose-500'
+      },
+      {
+        id: '02',
+        name: 'Trường ĐH, CĐ',
+        badge: 'Trụ cột 02: Giáo dục đào tạo',
+        badgeColor: 'bg-sky-50 text-sky-900 border-sky-200',
+        title: 'CẤP PHÉP HOẠT ĐỘNG ĐỐI VỚI TRƯỜNG ĐẠI HỌC, CAO ĐẲNG',
+        desc: 'Có vốn đầu tư hoặc liên kết nước ngoài',
+        podiumId: 'svg-podium-02',
+        cardId: 'pillar-card-02',
+        activeRing: 'ring-sky-500'
+      },
+      {
+        id: '03',
+        name: 'Bảo vệ cán bộ',
+        badge: 'Trụ cột 03: Trọng tâm thể chế',
+        badgeColor: 'bg-crimson/10 text-crimson border-crimson/30',
+        title: 'QUY ĐỊNH CƠ CHẾ LOẠI TRỪ, MIỄN TRÁCH NHIỆM PHÁP LÝ',
+        desc: 'Bảo vệ cán bộ, công chức, viên chức vì lợi ích chung trong quá trình thực hiện nhiệm vụ, hoạt động công vụ do cơ quan có thẩm quyền, người có thẩm quyền giao mà gây ra thiệt hại nhưng được cơ quan có thẩm quyền kết luận không phải do vụ lợi và vì sự phát triển chung của Thành phố.\nBẢO VỆ CÁN BỘ, CÔNG CHỨC DÁM NGHĨ, DÁM LÀM VÌ LỢI ÍCH CHUNG',
+        podiumId: 'svg-podium-03',
+        cardId: 'pillar-card-03',
+        activeRing: 'ring-crimson'
+      }
+    ];
+
+    let currentPillarIndex = 2; // Default to Center Pillar 03 (Bảo vệ cán bộ)
+
+    function selectStagePillar(index) {
+      currentPillarIndex = index;
+      const data = stagePillars[index];
+      if (!data) return;
+
+      // Update banner text
+      const banner = document.getElementById('active-pillar-banner');
+      const titleEl = document.getElementById('active-pillar-title');
+      const descEl = document.getElementById('active-pillar-desc');
+
+      if (banner && titleEl && descEl) {
+        banner.className = 'mt-6 text-center max-w-3xl mx-auto p-5 rounded-2xl border transition-all duration-300 ' + data.badgeColor;
+        titleEl.textContent = data.title;
+        descEl.textContent = data.desc;
+      }
+
+      // Update 3D Podiums state
+      stagePillars.forEach((p, idx) => {
+        const pod = document.getElementById(p.podiumId);
+        const card = document.getElementById(p.cardId);
+
+        if (pod) {
+          if (idx === index) {
+            pod.style.transform = 'translateY(-14px) scale(1.06)';
+            pod.style.transformOrigin = 'center bottom';
+            pod.style.filter = 'drop-shadow(0 20px 25px rgba(0,0,0,0.3))';
+          } else {
+            pod.style.transform = 'translateY(0) scale(1)';
+            pod.style.filter = '';
+          }
+        }
+
+        if (card) {
+          if (idx === index) {
+            card.classList.add('ring-4', 'ring-offset-2', p.activeRing, 'scale-105', '-translate-y-2');
+          } else {
+            card.classList.remove('ring-4', 'ring-offset-2', 'ring-rose-500', 'ring-sky-500', 'ring-crimson', 'scale-105', '-translate-y-2');
+          }
+        }
+      });
+
+      // Update mobile pill buttons
+      const tabBtns = document.querySelectorAll('.pillar-tab-btn');
+      tabBtns.forEach((btn, idx) => {
+        if (idx === index) {
+          btn.className = 'pillar-tab-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all border flex items-center gap-2 shadow-sm ' + data.badgeColor;
+        } else {
+          btn.className = 'pillar-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all border flex items-center gap-2 bg-white border-slate-200 text-slate-700 hover:bg-slate-50';
+        }
+      });
+    }
+
+    // Attach click and hover events
+    stagePillars.forEach((p, idx) => {
+      const pod = document.getElementById(p.podiumId);
+      const card = document.getElementById(p.cardId);
+
+      if (pod) {
+        pod.addEventListener('click', () => selectStagePillar(idx));
+        pod.addEventListener('mouseenter', () => selectStagePillar(idx));
+      }
+
+      if (card) {
+        card.addEventListener('click', () => selectStagePillar(idx));
+        card.addEventListener('mouseenter', () => selectStagePillar(idx));
+      }
+    });
+
+    const tabBtns = document.querySelectorAll('.pillar-tab-btn');
+    tabBtns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const pillarIdx = parseInt(btn.getAttribute('data-pillar'), 10);
+        selectStagePillar(pillarIdx);
+      });
+    });
+
+    // Initialize default active pillar
+    selectStagePillar(2);
+  </script>
+
+</body>
+</html>
